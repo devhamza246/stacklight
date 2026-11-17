@@ -25,7 +25,7 @@ the corpus holds two conflicting documents; both are listed as gold.
 written by something else (for example the backend test suite, which uses the same database and stub
 embedders). If retrieval numbers look implausibly low, empty the KB and reseed before evaluating:
 
-    docker exec stacklight-postgres-1 psql -U stacklight -d stacklight \
+    docker exec stacklight-dev-postgres-1 psql -U stacklight -d stacklight \
       -c "truncate documents, chunks restart identity cascade" && make eval-retrieval
 
 `python evals/report.py` re-renders the table and the one-line summary from the committed JSON (retrieval-only

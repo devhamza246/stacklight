@@ -85,9 +85,23 @@ no language model is involved in this table.
 
 53 questions (45 answerable), no model involved, dataset sha256 `d276614d8daf`, results recorded at code commit `136249cdb6bd` (the table is the output of `python evals/report.py`).
 
-**Answer-level table (faithfulness, citation rate, abstention accuracy, cost and latency per query): not yet measured.**
-No LLM API key was available when this was built. It is produced by `make eval` once a key and model are configured; the
-table will then fill in here with the model name pinned in the results file. No value is shown until it has been measured.
+**Answer-level table**, from `make eval` with a live model (`claude-haiku-5-5`), on the same 53 questions. Both pipelines use
+the same Answerer and Fact-checker; only retrieval differs.
+
+| Metric | Naive vector RAG | Hybrid + rerank |
+|---|---|---|
+| Citation rate | 100.0% | 100.0% |
+| Faithfulness (mean) | 0.969 | 0.965 |
+| Abstention accuracy | 92.5% | 90.6% |
+| Correct abstention (unanswerable) | 100.0% | 100.0% |
+| Answer rate (answerable) | 91.1% | 88.9% |
+| Mean cost / query | $0.0004 | $0.0005 |
+| Mean latency / query | 3770 ms | 6762 ms |
+
+Run at code commit `5e31d1bfcbf6`, dataset sha256 `d276614d8daf`. Read it honestly: hybrid + rerank retrieves better
+(table above) but does **not** improve answer-level faithfulness or answer rate here, and it costs about 1.8x the latency
+(the cross-encoder runs on CPU). Faithfulness is already near ceiling for both, and the differences between the two columns
+are within what a 53-question set can resolve, so no claim is made that either pipeline answers better.
 
 **Caveats, stated plainly.**
 - The 53 questions (45 answerable, 8 unanswerable) were **drafted by Claude and have not yet been hand-checked by the
@@ -98,7 +112,7 @@ table will then fill in here with the model name pinned in the results file. No 
 
 **What the metrics mean.** *Hit rate@k*: the share of answerable questions for which a gold passage is in the top k
 retrieved chunks (a hit needs the right file and the exact gold snippet inside the chunk). *MRR*: mean of 1 / rank of the
-first gold passage (0 when it is missing); higher is better, 1 is always first. Planned for `make eval`: *citation rate*
+first gold passage (0 when it is missing); higher is better, 1 is always first. Measured by `make eval`: *citation rate*
 (answers with at least one valid citation), *faithfulness* (share of claims the Fact-checker finds supported), *abstention
 accuracy* (answers when answerable, abstains when not), and mean cost and latency per query.
 
@@ -106,7 +120,7 @@ accuracy* (answers when answerable, abstains when not), and mean cost and latenc
 
 ```bash
 make seed && make eval-retrieval     # the table above (needs the dev database; downloads two small models once)
-make eval                            # adds the answer-level table; needs ANTHROPIC_API_KEY (or another provider key) and LLM_MODEL
+make eval                            # adds the answer-level table; needs a provider key (e.g. ANTHROPIC_API_KEY) and LLM_MODEL in the environment
 python evals/report.py               # re-render the table and the one-line summary from the committed JSON
 ```
 
@@ -163,8 +177,8 @@ Public deployment through a Cloudflare Tunnel is written up in [docs/deploy.md](
 
 ## Honest limitations
 
-- The eval dataset is unreviewed (drafted by Claude) and small; the answer-level metrics are not yet measured.
-- The Curator and the whole answer path have been exercised against deterministic stub models in tests and in the browser, **not yet against a live model**. Expect to tune prompts and the 0.7 threshold once you measure.
+- The eval dataset is unreviewed (drafted by Claude) and small (53 questions, 8 unanswerable), so the answer-level numbers are provisional and the two pipelines are not statistically separable on them.
+- The Curator, Drafter and answer path were exercised against deterministic stub models in tests and in the browser. Only the answer path (Answerer and Fact-checker) has been measured against a live model (the table above); the Curator and Drafter have **not**. Expect to tune prompts and the 0.7 threshold once you measure.
 - Single API worker; no authentication or multi-tenancy by design; the "send" is simulated.
 - The corpus is synthetic (plus unmodified Commander.js docs, MIT, see `corpus/LICENSES.md`); keyword search is English only.
 - Python and Node dependencies are lower-bounded (no lock or constraints file for the backend) and the Docker base images are not pinned by digest, so a fresh build can pick up newer versions.
