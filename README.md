@@ -169,7 +169,6 @@ Public deployment through a Cloudflare Tunnel is written up in [docs/deploy.md](
 - The corpus is synthetic (plus unmodified Commander.js docs, MIT, see `corpus/LICENSES.md`); keyword search is English only.
 - Python and Node dependencies are lower-bounded (no lock or constraints file for the backend) and the Docker base images are not pinned by digest, so a fresh build can pick up newer versions.
 - The Curator's stale cutoff is computed from today's date; the corpus pages are dated 2026-02 to 2026-06, so the single stale finding will change as time passes.
-- The license is not chosen yet; the author must pick one before the repository is published.
 - The Curator only reports conflicts it finds among the top candidate pairs per audit (capped), and a rejected finding can be proposed again on the next audit.
 
 ## What was verified, and how
@@ -215,4 +214,4 @@ Backend: Python 3.12+ in `backend/.venv` (`pip install -e "backend[dev,e2e]"`; C
 Demo recording plan: [docs/demo-script.md](docs/demo-script.md). UI design notes and known
 deviations from the mockups: [docs/design/README.md](docs/design/README.md).
 
-License: not yet chosen.
+License: MIT (see `LICENSE`). Third-party corpus documents keep their own licenses, see `corpus/LICENSES.md`.
