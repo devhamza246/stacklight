@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stacklight: chat mockup</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="base.css">
+</head>
+<body data-default="idle" data-tab="chat">
+<a class="skip" href="#main">Skip to content</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol><symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol><symbol id="i-dash" viewBox="0 0 24 24"><path d="M7 12h10"/></symbol><symbol id="i-dot" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/></symbol><symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 3.8l9.2 16H2.8z"/><path d="M12 10v4.2M12 17.2v.01"/></symbol><symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9.2"/><path d="M9.6 9.6a2.5 2.5 0 1 1 3.6 2.2c-.8.4-1.2.9-1.2 1.8M12 17.2v.01"/></symbol><symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol><symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v5.5c0 4.7-3.2 8.2-8 9.5-4.8-1.3-8-4.8-8-9.5V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></symbol><symbol id="i-file" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5"/></symbol><symbol id="i-send" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol><symbol id="i-stop" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2" fill="currentColor"/></symbol><symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></symbol><symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 9h13l-3-3M20 15H7l3 3"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 7l8.5 6 8.5-6"/></symbol><symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l3-7 4 14 3-7h4"/></symbol><symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 13l3-8h12l3 8v5a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M3 13h5l1 2h6l1-2h5"/></symbol><symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/></symbol><symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6"/></symbol><symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol><symbol id="i-power" viewBox="0 0 24 24"><path d="M12 3v8M6.6 6.6a8 8 0 1 0 10.8 0"/></symbol><symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3.2-6 7-6s7 2 7 6"/></symbol><symbol id="i-archive" viewBox="0 0 24 24"><path d="M3 5h18v4H3zM5 9v10h14V9M10 13h4"/></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol><symbol id="i-plane" viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-3-7z"/></symbol></defs></svg>
+<div class="app">
+<header class="topbar" role="banner">
+  <div class="brand"><svg class="logo" viewBox="0 0 28 28" aria-hidden="true"><rect x="3" y="4" width="22" height="6" rx="3" fill="currentColor"/><rect x="3" y="11" width="22" height="6" rx="3" fill="currentColor" opacity=".6"/><rect x="3" y="18" width="22" height="6" rx="3" fill="currentColor" opacity=".3"/></svg><div class="brand-text"><span class="wordmark">Stacklight</span><span class="tagline">AI team that answers from your docs, and keeps them current.</span></div></div>
+  <div class="topbar-actions">
+    <div class="status" role="status" aria-label="Demo status">
+      <span class="status-pill" data-s="idle streaming answer abstain busy resetting failed"><span class="dot" aria-hidden="true"></span><strong class="hide-sm">Live demo</strong><span><span class="hide-sm">· </span>$0.19 of $2.00<span class="hide-sm"> today</span></span></span>
+      <span class="status-pill is-paused" data-s="paused" id="status-paused"><svg class="i " aria-hidden="true"><use href="#i-pause"/></svg><strong>Demo paused</strong><span class="hide-sm">· $2.00 of $2.00 today</span></span>
+    </div>
+    <button class="icon-btn theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark theme"><span class="i-moon"><svg class="i lg" aria-hidden="true"><use href="#i-moon"/></svg></span><span class="i-sun"><svg class="i lg" aria-hidden="true"><use href="#i-sun"/></svg></span></button>
+  </div>
+</header>
+<div class="workspace">
+  <main id="main" class="col-chat" data-panel="chat" aria-label="Chat">
+<div class="thread is-centered" data-s="idle"><div class="thread-inner">
+  <div class="intro"><p class="eyebrow">AI team that answers from your docs, and keeps them current.</p><h1>Ask anything the docs can answer.</h1>
+  <p>Every answer cites its sources. If the docs don&rsquo;t say, Stacklight tells you instead of guessing.</p></div>
+  <form class="composer" onsubmit="return false"><label class="sr-only" for="q">Your question</label>
+  <div class="composer-box"><div class="composer-row"><textarea id="q" rows="3" placeholder="Ask a follow-up">What first-response time do we promise for a P1 incident on the Business plan?</textarea><button class="send" type="button" aria-label="Ask" data-goto-state="streaming"><svg class="i lg" aria-hidden="true"><use href="#i-send"/></svg></button></div></div>
+  <p class="composer-hint" style="margin-top:8px">Enter to ask · Shift+Enter for a new line</p></form><div class="chips" role="group" aria-label="Suggested questions">
+  <button class="chip" type="button">What&rsquo;s our uptime SLA for Enterprise?</button>
+  <button class="chip" type="button">How many API requests per minute on the Team plan?</button>
+  <button class="chip chip-action" type="button" data-goto-state="answer" data-goto-tab="queue"><svg class="i " aria-hidden="true"><use href="#i-search"/></svg>Audit the knowledge base</button>
+</div>
+</div></div>
+
+<div class="thread" data-s="streaming"><div class="thread-inner"><div class="msg-user"><p><span class="sr-only">You asked: </span>What first-response time do we promise for a P1 incident on the Business plan?</p></div><article class="answer-card" aria-label="Answer">
+  <div class="answer-head"><span class="who">Answer</span><span class="badge badge-neutral">Writing…</span></div>
+  <div class="answer-body" aria-live="polite" aria-busy="true"><p class="answer-lead">On the Business plan, a P1 incident gets a first response within <strong>1 hour, 24/7</strong> <button class="cite" type="button" data-src="1" aria-controls="drawer" aria-expanded="false" aria-label="Source 1: SLA and Support Tiers">[1]</button>.</p><p>That is faster than the standard first-response target of 4 business hours <button class="cite" type="button" data-src="1" aria-controls="drawer" aria-expanded="false" aria-label="Source 1: SLA and Support Tiers">[1]</button>, and the Enterprise plan promises<span class="caret" aria-hidden="true"></span></p></div>
+  
+  <div class="answer-foot"><span class="num">$0.002 · 2.1 s so far</span></div>
+</article></div></div>
+<div class="thread" data-s="answer"><div class="thread-inner"><div class="msg-user"><p><span class="sr-only">You asked: </span>What first-response time do we promise for a P1 incident on the Business plan?</p></div><article class="answer-card" aria-label="Answer">
+  <div class="answer-head"><span class="who">Answer</span><span class="badge badge-ok"><svg class="i " aria-hidden="true"><use href="#i-shield"/></svg>Fact-checked · 5/5 claims supported</span></div>
+  <div class="answer-body" aria-live="polite" aria-busy="false"><p class="answer-lead">On the Business plan, a P1 incident gets a first response within <strong>1 hour, 24/7</strong> <button class="cite" type="button" data-src="1" aria-controls="drawer" aria-expanded="false" aria-label="Source 1: SLA and Support Tiers">[1]</button>.</p>
+<p>That is faster than the standard first-response target of 4 business hours <button class="cite" type="button" data-src="1" aria-controls="drawer" aria-expanded="false" aria-label="Source 1: SLA and Support Tiers">[1]</button>, and the Enterprise plan promises 15 minutes <button class="cite" type="button" data-src="1" aria-controls="drawer" aria-expanded="false" aria-label="Source 1: SLA and Support Tiers">[1]</button>. A P1 means production flows are down or data is being lost for most users <button class="cite" type="button" data-src="2" aria-controls="drawer" aria-expanded="false" aria-label="Source 2: SLA and Support Tiers, severity definitions">[2]</button>.</p></div>
+  <div class="answer-sources" role="group" aria-label="Sources">
+  <button class="source-link" type="button" data-src="1" aria-controls="drawer" aria-expanded="false"><svg class="i " aria-hidden="true"><use href="#i-file"/></svg><span><span class="mono">[1]</span> SLA and Support Tiers · Support channels</span></button>
+  <button class="source-link" type="button" data-src="2" aria-controls="drawer" aria-expanded="false"><svg class="i " aria-hidden="true"><use href="#i-file"/></svg><span><span class="mono">[2]</span> SLA and Support Tiers · Severity</span></button></div>
+  <div class="answer-foot"><span class="num"><strong>$0.004</strong> · 3.1 s</span><span class="sep" aria-hidden="true">|</span><span>2 sources</span><button class="link-btn" type="button" data-goto-tab="trace">View trace</button></div>
+</article></div></div>
+<div class="thread" data-s="abstain"><div class="thread-inner"><div class="msg-user"><p><span class="sr-only">You asked: </span>What is our equity refresh policy for senior engineers?</p></div><article class="callout callout-warn" aria-labelledby="abs-h">
+  <div class="callout-head"><span class="callout-icon"><svg class="i lg" aria-hidden="true"><use href="#i-help"/></svg></span><div>
+    <h2 id="abs-h">I&rsquo;m not sure</h2>
+    <p>I couldn&rsquo;t find this in the knowledge base. The closest pages cover benefits, reviews and time off, and none of them mention equity, so I won&rsquo;t guess.</p></div></div>
+  <div class="callout-actions" style="padding-top:8px"><button class="btn btn-warn" type="button"><svg class="i " aria-hidden="true"><use href="#i-user"/></svg>Ask a human</button><button class="btn" type="button">Rephrase the question</button></div>
+  <div class="closest"><h3>Closest sources, none of them answer it</h3><ul>
+    <li><svg class="i " aria-hidden="true"><use href="#i-file"/></svg><div><div class="t">Benefits and Stipends</div><div class="p mono">handbook/benefits-and-stipends.md</div></div><span class="tag">Related topic</span></li>
+    <li><svg class="i " aria-hidden="true"><use href="#i-file"/></svg><div><div class="t">Performance Reviews</div><div class="p mono">handbook/performance-reviews.md</div></div><span class="tag">Related topic</span></li>
+    <li><svg class="i " aria-hidden="true"><use href="#i-file"/></svg><div><div class="t">PTO and Holidays</div><div class="p mono">handbook/pto-and-holidays.md</div></div><span class="tag">Weak match</span></li></ul></div>
+  <div class="callout-foot num">Abstained, no answer shown · $0.001 · 1.5 s · <button class="link-btn" type="button" style="margin-left:0" data-goto-tab="trace">View trace</button></div>
+</article></div></div>
+<div class="thread" data-s="failed"><div class="thread-inner"><div class="msg-user"><p><span class="sr-only">You asked: </span>What first-response time do we promise for a P1 incident on the Business plan?</p></div><article class="callout callout-danger" aria-labelledby="fail-h">
+  <div class="callout-head"><span class="callout-icon"><svg class="i lg" aria-hidden="true"><use href="#i-power"/></svg></span><div>
+    <h2 id="fail-h">The answer service isn&rsquo;t responding</h2>
+    <p>I couldn&rsquo;t reach the language model, so there is no answer yet. Nothing was changed, and your question is saved. The steps that did run are kept in the trace.</p></div></div>
+  <div class="callout-actions"><button class="btn btn-primary" type="button"><svg class="i " aria-hidden="true"><use href="#i-refresh"/></svg>Try again</button><button class="btn" type="button" data-goto-tab="trace">View trace</button></div>
+  <div class="callout-foot num">Run failed · <span class="mono">llm_unavailable</span> · $0.0003 · 9.2 s</div>
+</article></div></div>
+
+<div class="thread is-centered" data-s="paused"><div class="thread-inner">
+  <div class="banner" role="status"><svg class="i lg" aria-hidden="true"><use href="#i-pause"/></svg><div><strong>Demo paused: daily budget reached</strong><p>The demo covers its own model costs and has used today&rsquo;s $2.00. It comes back at midnight UTC, in about 6 hours. Nothing is broken.</p></div></div>
+  <div class="intro"><h1>Ask anything the docs can answer.</h1><p>You can still read the trace and approval examples. New questions are switched off until the budget resets.</p></div>
+  <form class="composer" onsubmit="return false"><label class="sr-only" for="q">Your question</label>
+  <div class="composer-box disabled-box"><div class="composer-row"><textarea id="q" rows="1" placeholder="Questions are paused until midnight UTC" disabled></textarea><button class="send" type="button" aria-disabled="true" aria-label="Ask (unavailable while the demo is paused)"><svg class="i lg" aria-hidden="true"><use href="#i-send"/></svg></button></div></div>
+  <p class="composer-hint" style="margin-top:8px">Resets at 00:00 UTC</p></form>
+</div></div>
+
+<div class="thread" data-s="busy"><div class="thread-inner"><div class="msg-user"><p><span class="sr-only">You asked: </span>What first-response time do we promise for a P1 incident on the Business plan?</p></div>
+  <div class="banner is-info" role="status"><svg class="i lg" aria-hidden="true"><use href="#i-clock"/></svg><div><strong>Busy right now, try again in a few seconds</strong><p>Several people are using the demo. Your question is kept, and nothing was charged.</p><p style="margin-top:12px"><button class="btn btn-primary" type="button" data-goto-state="streaming"><svg class="i " aria-hidden="true"><use href="#i-refresh"/></svg>Try again</button></p></div></div>
+</div></div>
+
+<div class="thread" data-s="resetting"><div class="thread-inner"><div class="msg-user"><p><span class="sr-only">You asked: </span>What first-response time do we promise for a P1 incident on the Business plan?</p></div>
+  <div class="banner is-info" role="status"><svg class="i lg" aria-hidden="true"><use href="#i-refresh"/></svg><div><strong>Refreshing the demo data</strong><p>The demo resets itself every few hours to a clean copy of the sample docs. It will be back in a few seconds.</p><p style="margin-top:12px"><button class="btn btn-primary" type="button" data-goto-state="streaming"><svg class="i " aria-hidden="true"><use href="#i-refresh"/></svg>Try again</button></p></div></div>
+</div></div>
+
+<div class="dock" data-s="streaming"><form class="composer" onsubmit="return false"><label class="sr-only" for="q">Your question</label>
+  <div class="composer-box"><div class="composer-row"><textarea id="q" rows="1" placeholder="Ask a follow-up"></textarea><button class="send is-stop" type="button" aria-label="Stop answering" data-goto-state="idle"><svg class="i lg" aria-hidden="true"><use href="#i-stop"/></svg></button></div></div>
+  <p class="composer-hint" style="margin-top:8px">Answering…</p></form></div>
+<div class="dock" data-s="answer abstain failed busy resetting"><form class="composer" onsubmit="return false"><label class="sr-only" for="q">Your question</label>
+  <div class="composer-box"><div class="composer-row"><textarea id="q" rows="1" placeholder="Ask a follow-up"></textarea><button class="send" type="button" aria-label="Ask" data-goto-state="streaming"><svg class="i lg" aria-hidden="true"><use href="#i-send"/></svg></button></div></div>
+  <p class="composer-hint" style="margin-top:8px">Enter to ask · Shift+Enter for a new line</p></form></div>
+</main>
+  <aside class="col-side" aria-label="Trace and approval queue">
+    <section class="panel trace" data-panel="trace" aria-labelledby="trace-h-idle" data-s="idle">
+  <div class="panel-head"><h2 id="trace-h-idle"><svg class="i " aria-hidden="true"><use href="#i-activity"/></svg>Trace</h2><span class="totals">Ready</span></div>
+  <ol class="steps" aria-label="Agent pipeline"><li class="step is-pending" style="--i:0"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Orchestrator</div><div class="step-role">Routes the request</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:1"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Retriever</div><div class="step-role">Finds the best passages</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:2"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Answerer</div><div class="step-role">Writes a cited answer</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:3"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Fact-checker</div><div class="step-role">Checks every claim</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li></ol>
+  
+  <div class="trace-foot"><span>Ask a question and the team shows its work here: every step, its cost and its latency.</span></div>
+</section>
+<section class="panel trace" data-panel="trace" aria-labelledby="trace-h-streaming" data-s="streaming">
+  <div class="panel-head"><h2 id="trace-h-streaming"><svg class="i " aria-hidden="true"><use href="#i-activity"/></svg>Trace</h2><span class="totals is-live" aria-live="off">$0.002 · 2.1 s</span></div>
+  <ol class="steps" aria-label="Agent pipeline"><li class="step is-done" style="--i:0"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Orchestrator</div><div class="step-role">Routed to ask</div></div><div class="step-metrics"><b>0.4 s</b>$0.0003</div></li><li class="step is-done" style="--i:1"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Retriever</div><div class="step-role">5 passages, hybrid + rerank</div></div><div class="step-metrics"><b>0.6 s</b>$0.0000</div></li><li class="step is-active" style="--i:2"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Running</span></span><div><div class="step-name">Answerer</div><div class="step-role">Writing the answer</div><span class="step-status">Running…</span></div><div class="step-metrics"><b>1.1 s</b>$0.0014</div></li><li class="step is-pending" style="--i:3"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Fact-checker</div><div class="step-role">Checks every claim</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li></ol>
+  
+  <div class="trace-foot"><span><b>Route</b> ask</span><span><b>Retrieved</b> 5 passages</span></div>
+</section>
+<section class="panel trace" data-panel="trace" aria-labelledby="trace-h-answer" data-s="answer">
+  <div class="panel-head"><h2 id="trace-h-answer"><svg class="i " aria-hidden="true"><use href="#i-activity"/></svg>Trace</h2><span class="totals">$0.004 · 3.1 s</span></div>
+  <ol class="steps" aria-label="Agent pipeline"><li class="step is-done" style="--i:0"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Orchestrator</div><div class="step-role">Routed to ask</div></div><div class="step-metrics"><b>0.4 s</b>$0.0003</div></li><li class="step is-done" style="--i:1"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Retriever</div><div class="step-role">5 passages, hybrid + rerank</div></div><div class="step-metrics"><b>0.6 s</b>$0.0000</div></li><li class="step is-done" style="--i:2"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Answerer</div><div class="step-role">Cited 2 sources</div></div><div class="step-metrics"><b>1.4 s</b>$0.0025</div></li><li class="step is-done" style="--i:3"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Fact-checker</div><div class="step-role">5 of 5 claims supported</div></div><div class="step-metrics"><b>0.7 s</b>$0.0010</div></li></ol>
+  
+  <div class="trace-foot"><span><b>Route</b> ask</span><span><b>Retrieved</b> 5</span><span><b>Cited</b> 2</span></div>
+</section>
+<section class="panel trace" data-panel="trace" aria-labelledby="trace-h-abstain" data-s="abstain">
+  <div class="panel-head"><h2 id="trace-h-abstain"><svg class="i " aria-hidden="true"><use href="#i-activity"/></svg>Trace</h2><span class="totals">$0.001 · 1.5 s</span></div>
+  <ol class="steps" aria-label="Agent pipeline"><li class="step is-done" style="--i:0"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Orchestrator</div><div class="step-role">Routed to ask</div></div><div class="step-metrics"><b>0.4 s</b>$0.0003</div></li><li class="step is-done" style="--i:1"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Retriever</div><div class="step-role">5 passages, none relevant</div></div><div class="step-metrics"><b>0.6 s</b>$0.0000</div></li><li class="step is-warn" style="--i:2"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-warn"/></svg><span class="sr-only">Declined</span></span><div><div class="step-name">Answerer</div><div class="step-role">Chose not to answer</div><span class="step-status">Not in the knowledge base</span></div><div class="step-metrics"><b>0.5 s</b>$0.0006</div></li><li class="step is-skipped" style="--i:3"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dash"/></svg><span class="sr-only">Not run</span></span><div><div class="step-name">Fact-checker</div><div class="step-role">Nothing to check</div></div><div class="step-metrics"></div></li></ol>
+  
+  <div class="trace-foot"><span><b>Route</b> ask</span><span><b>Outcome</b> abstained (not_in_kb)</span></div>
+</section>
+<section class="panel trace" data-panel="trace" aria-labelledby="trace-h-paused" data-s="paused">
+  <div class="panel-head"><h2 id="trace-h-paused"><svg class="i " aria-hidden="true"><use href="#i-activity"/></svg>Trace</h2><span class="totals">Ready</span></div>
+  <ol class="steps" aria-label="Agent pipeline"><li class="step is-pending" style="--i:0"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Orchestrator</div><div class="step-role">Routes the request</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:1"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Retriever</div><div class="step-role">Finds the best passages</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:2"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Answerer</div><div class="step-role">Writes a cited answer</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:3"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Fact-checker</div><div class="step-role">Checks every claim</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li></ol>
+  
+  <div class="trace-foot"><span>Ask a question and the team shows its work here: every step, its cost and its latency.</span></div>
+</section>
+<section class="panel trace" data-panel="trace" aria-labelledby="trace-h-busy" data-s="busy">
+  <div class="panel-head"><h2 id="trace-h-busy"><svg class="i " aria-hidden="true"><use href="#i-activity"/></svg>Trace</h2><span class="totals">Ready</span></div>
+  <ol class="steps" aria-label="Agent pipeline"><li class="step is-pending" style="--i:0"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Orchestrator</div><div class="step-role">Routes the request</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:1"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Retriever</div><div class="step-role">Finds the best passages</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:2"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Answerer</div><div class="step-role">Writes a cited answer</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:3"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Fact-checker</div><div class="step-role">Checks every claim</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li></ol>
+  
+  <div class="trace-foot"><span>Ask a question and the team shows its work here: every step, its cost and its latency.</span></div>
+</section>
+<section class="panel trace" data-panel="trace" aria-labelledby="trace-h-resetting" data-s="resetting">
+  <div class="panel-head"><h2 id="trace-h-resetting"><svg class="i " aria-hidden="true"><use href="#i-activity"/></svg>Trace</h2><span class="totals">Ready</span></div>
+  <ol class="steps" aria-label="Agent pipeline"><li class="step is-pending" style="--i:0"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Orchestrator</div><div class="step-role">Routes the request</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:1"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Retriever</div><div class="step-role">Finds the best passages</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:2"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Answerer</div><div class="step-role">Writes a cited answer</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li><li class="step is-pending" style="--i:3"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dot"/></svg><span class="sr-only">Waiting</span></span><div><div class="step-name">Fact-checker</div><div class="step-role">Checks every claim</div></div><div class="step-metrics"><span aria-label="no data yet">&ndash;</span></div></li></ol>
+  
+  <div class="trace-foot"><span>Ask a question and the team shows its work here: every step, its cost and its latency.</span></div>
+</section>
+<section class="panel trace" data-panel="trace" aria-labelledby="trace-h-failed" data-s="failed">
+  <div class="panel-head"><h2 id="trace-h-failed"><svg class="i " aria-hidden="true"><use href="#i-activity"/></svg>Trace</h2><span class="totals">$0.0003 · 9.2 s</span></div>
+  <ol class="steps" aria-label="Agent pipeline"><li class="step is-done" style="--i:0"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Orchestrator</div><div class="step-role">Routed to ask</div></div><div class="step-metrics"><b>0.4 s</b>$0.0003</div></li><li class="step is-done" style="--i:1"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg><span class="sr-only">Done</span></span><div><div class="step-name">Retriever</div><div class="step-role">5 passages, hybrid + rerank</div></div><div class="step-metrics"><b>0.6 s</b>$0.0000</div></li><li class="step is-error" style="--i:2"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-x"/></svg><span class="sr-only">Failed</span></span><div><div class="step-name">Answerer</div><div class="step-role">Language model unavailable</div><span class="step-status">Failed after 8.2 s</span></div><div class="step-metrics"><b>8.2 s</b>$0.0000</div></li><li class="step is-skipped" style="--i:3"><span class="node"><svg class="i " aria-hidden="true"><use href="#i-dash"/></svg><span class="sr-only">Not run</span></span><div><div class="step-name">Fact-checker</div><div class="step-role">Not run</div></div><div class="step-metrics"></div></li></ol>
+  
+  <div class="trace-foot"><span class="warnline">Run failed: llm_unavailable</span><span>Spans kept so you can see where it stopped.</span></div>
+</section>
+    <section class="panel queue" data-panel="queue" aria-labelledby="queue-h-empty" data-s="idle streaming paused busy resetting failed">
+  <div class="panel-head"><h2 id="queue-h-empty"><svg class="i " aria-hidden="true"><use href="#i-inbox"/></svg>Approval queue </h2></div>
+  <p class="panel-sub">Agents propose. You decide. Nothing changes until you approve.</p>
+  <div class="empty"><span class="ring"><svg class="i lg" aria-hidden="true"><use href="#i-check"/></svg></span><h3>Nothing waiting for review</h3><p>Run an audit and the Curator will flag conflicts and stale pages here. It never changes a document on its own.</p></div>
+</section>
+<section class="panel queue" data-panel="queue" aria-labelledby="queue-h-full" data-s="answer abstain">
+  <div class="panel-head"><h2 id="queue-h-full"><svg class="i " aria-hidden="true"><use href="#i-inbox"/></svg>Approval queue <span class="count-badge" aria-label="3 pending">3</span></h2></div>
+  <p class="panel-sub">Agents propose. You decide. Nothing changes until you approve.</p>
+  <div class="queue-list"><article class="q-card is-new q-compact" aria-labelledby="qc1">
+  <div class="q-head"><span class="q-kind conflict"><svg class="i " aria-hidden="true"><use href="#i-swap"/></svg></span><div>
+    <div class="q-meta"><span>Conflict</span><span>·</span><span>Found by Curator</span></div>
+    <h3 class="q-title" id="qc1">Two documents disagree about the refund window</h3>
+    <p class="q-sub">refund-policy.md says 30 days, billing-faq.md says 14.</p></div></div>
+  <div class="q-body">
+    <div class="diff two">
+      <div class="diff-side"><div class="diff-file"><span class="mono">refund-policy.md</span><span>Finance and Legal · reviewed 2026-08-02</span></div><div class="diff-line keep"><span class="k">Refund window:</span> <mark>30 days</mark> from the date of your first purchase of a paid plan.</div></div>
+      <div class="diff-side is-wrong"><div class="diff-file"><span class="mono">billing-faq.md</span><span>Customer Success · reviewed 2026-07-21</span></div><div class="diff-line"><span class="k">Refund window:</span> <mark>14 days</mark> from the date of the charge, for monthly and annual plans.</div></div>
+    </div>
+    <div class="fix"><div class="fix-title">Proposed fix in billing-faq.md</div>
+      <div class="fix-row del"><span class="g" aria-label="Removed">&minus;</span><span>**Refund window:** 14 days from the date of the charge, for monthly and annual plans.</span></div>
+      <div class="fix-row add"><span class="g" aria-label="Added">+</span><span>**Refund window:** 30 days from the date of your first purchase of a paid plan.</span></div></div>
+    <p class="why"><b>Why this side wins:</b> refund-policy.md is owned by Finance and Legal and was reviewed more recently.</p>
+  </div>
+  <div class="q-gate"><svg class="i " aria-hidden="true"><use href="#i-lock"/></svg><span><b>Needs your approval.</b> Nothing changes until you approve.</span></div>
+  <p class="q-scope">Scope: 1 file, <span class="mono">billing-faq.md</span>. One exact-match edit, <span class="mono">replace_all</span> off.</p>
+  <div class="q-actions"><button class="btn btn-primary" type="button" data-goto-state="resolved"><svg class="i " aria-hidden="true"><use href="#i-check"/></svg>Approve change</button><button class="btn" type="button">Reject</button><a class="btn btn-quiet" href="approvals.html">Review diff</a></div>
+</article><article class="q-card q-compact" aria-labelledby="qc2">
+  <div class="q-head"><span class="q-kind stale"><svg class="i " aria-hidden="true"><use href="#i-clock"/></svg></span><div>
+    <div class="q-meta"><span>Stale</span><span>·</span><span>Found by Curator</span></div>
+    <h3 class="q-title" id="qc2"><span class="mono">legacy-onboarding-checklist-2024.md</span> looks out of date</h3>
+    <p class="q-sub">Last reviewed 2024-08-12, over two years ago.</p></div></div>
+  <div class="q-body"><div class="fix"><div class="fix-title">Why it was flagged</div><div class="diff-line">Points customers to the API v1 base URL <span class="mono">api.quillbase.example/v1</span>; current docs use <span class="mono">/v2</span>. Lists a $9 Starter plan.</div></div>
+    <p class="why"><b>Proposed:</b> archive the document so it stops appearing in answers. It can be restored.</p></div>
+  <div class="q-gate"><svg class="i " aria-hidden="true"><use href="#i-lock"/></svg><span><b>Needs your approval.</b> Nothing changes until you approve.</span></div>
+  <div class="q-actions"><a class="btn" href="approvals.html">Review</a></div>
+</article><article class="q-card q-compact" aria-labelledby="qc3">
+  <div class="q-head"><span class="q-kind reply"><svg class="i " aria-hidden="true"><use href="#i-mail"/></svg></span><div>
+    <div class="q-meta"><span>Draft reply</span><span>·</span><span>Ticket T-1025</span></div>
+    <h3 class="q-title" id="qc3">Reply to Hollis Data about 429 errors</h3>
+    <p class="q-sub">Customer is on Team and hits the rate limit.</p></div></div>
+  <div class="q-body"><div class="draft"><div class="to">To: Hollis Data · Re: Rate limit on Team too low</div>
+    <p>Hi, the Team plan allows 300 requests per minute per workspace <button class="cite" type="button" data-src="1" aria-label="Source 1: plan-limits-reference.md">[1]</button>. Business raises that to 1,200 <button class="cite" type="button" data-src="1" aria-label="Source 1: plan-limits-reference.md">[1]</button>. Until then, back off using the <span class="mono">Retry-After</span> header and batch requests <button class="cite" type="button" data-src="2" aria-label="Source 2: api-rate-limits-and-errors.md">[2]</button>.</p>
+    <p class="sim"><svg class="i " aria-hidden="true"><use href="#i-plane"/></svg>Simulated send. Nothing leaves the system.</p></div></div>
+  <div class="q-gate"><svg class="i " aria-hidden="true"><use href="#i-lock"/></svg><span><b>Needs your approval.</b> Nothing is sent until you approve.</span></div>
+  <div class="q-actions"><a class="btn" href="approvals.html">Review draft</a></div>
+</article></div>
+</section>
+  </aside>
+</div>
+<div class="scrim" data-close-drawer hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-head"><div style="flex:1;min-width:0"><div class="eyebrow">Source</div>
+    <h2 id="drawer-title" tabindex="-1">SLA and Support Tiers</h2>
+    <div class="drawer-path"><svg class="i " aria-hidden="true"><use href="#i-file"/></svg><span class="mono">corpus/handbook/sla-and-support-tiers.md</span></div></div>
+    <button class="icon-btn" type="button" aria-label="Close source" data-close-drawer><svg class="i lg" aria-hidden="true"><use href="#i-x"/></svg></button></div>
+  <div class="drawer-body">
+    <div class="drawer-tabs" role="group" aria-label="Cited passages"><button class="drawer-tab" type="button" data-src="1" aria-selected="true">[1] Support channels</button><button class="drawer-tab" type="button" data-src="2" aria-selected="false">[2] Severity</button></div>
+    <div class="src-panel" data-src="1"><h3>Support channels and first-response targets</h3>
+      <div class="passage"><table><thead><tr><th>Plan</th><th>Channels</th><th>Standard</th><th>P1</th></tr></thead><tbody>
+        <tr><td>Team</td><td>email</td><td>24 business hours</td><td>8 business hours</td></tr>
+        <tr class="cited"><td>Business</td><td>email and chat</td><td>4 business hours</td><td>1 hour, 24/7</td></tr>
+        <tr><td>Enterprise</td><td>email, chat, phone, shared Slack channel</td><td>2 business hours</td><td>15 minutes, 24/7</td></tr></tbody></table>
+        <p>Business hours are 08:00 to 18:00 UTC Monday to Friday, excluding company holidays.</p></div>
+      <div class="legend"><i aria-hidden="true"></i>Highlighted: the row the answer cites</div></div>
+    <div class="src-panel" data-src="2" hidden><h3>Severity definitions</h3>
+      <div class="passage"><p><mark><strong>P1:</strong> production flows are down or data is being lost for most users.</mark></p><p><strong>P2:</strong> major feature degraded, workaround exists.</p><p><strong>P3:</strong> minor issue or question.</p><p><strong>P4:</strong> feature request or documentation feedback.</p></div>
+      <div class="legend"><i aria-hidden="true"></i>Highlighted: the sentence the answer cites</div></div>
+  </div>
+  <div class="drawer-foot"><span>Owner: Customer Support</span><span>Last reviewed 2026-09-22</span></div>
+</aside>
+<nav class="tabbar" aria-label="Sections">
+  <button class="tab" data-tab="chat" type="button" aria-current="true"><svg class="i lg" aria-hidden="true"><use href="#i-chat"/></svg>Chat</button>
+  <button class="tab" data-tab="trace" type="button" aria-current="false"><svg class="i lg" aria-hidden="true"><use href="#i-activity"/></svg>Trace</button>
+  <button class="tab" data-tab="queue" type="button" aria-current="false"><svg class="i lg" aria-hidden="true"><use href="#i-inbox"/></svg>Queue<span class="count" aria-label="3 items to review">3</span></button>
+</nav>
+</div>
+<script src="mock.js"></script>
+</body>
+</html>

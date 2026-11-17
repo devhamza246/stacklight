@@ -1,0 +1,123 @@
+/* App-level additions on top of base.css (which is the approved mockup stylesheet, unchanged in spirit). */
+
+/* One panel at a time below 1024 px: the side column only exists on the Trace and Queue tabs. */
+@media (max-width: 1023px) {
+  .app[data-tab="chat"] .col-side { display: none; }
+  .col-side { padding: var(--sp-4) var(--sp-4) var(--sp-5); }
+}
+@media (min-width: 1024px) {
+  .trace-link, .queue-link { display: none !important; }
+}
+
+/* ---------- Composer: mode toggle, tone ---------- */
+.composer-modes { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-2); flex-wrap: wrap; }
+.seg { display: inline-flex; padding: 2px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--border); }
+.seg button {
+  min-height: 32px; padding: 0 12px; border: 0; border-radius: 8px; background: transparent;
+  color: var(--text-2); font-size: var(--fs-xs); font-weight: 600;
+}
+.seg button[aria-pressed="true"] { background: var(--surface); color: var(--text); box-shadow: var(--shadow-sm); outline: 1px solid var(--border-strong); }
+@media (max-width: 1023px) { .seg button { min-height: 40px; padding: 0 14px; } }
+.tone select {
+  min-height: 32px; border-radius: 8px; border: 1px solid var(--border-strong); background: var(--surface);
+  color: var(--text); font: inherit; font-size: var(--fs-xs); padding: 0 8px;
+}
+@media (max-width: 1023px) { .tone select { min-height: 40px; } }
+.composer-hint { margin-top: 8px; }
+.send:disabled { cursor: not-allowed; }
+.send[disabled] { background: var(--surface-3); color: var(--text-3); }
+.chip:disabled { opacity: .55; cursor: not-allowed; }
+
+/* ---------- Layout polish ---------- */
+.thread-inner > .banner { width: 100%; }
+.workspace { overflow: hidden; }
+.intro .eyebrow { font-size: var(--fs-sm); }
+.msg-user p { overflow-wrap: anywhere; }
+
+/* ---------- Answer card ---------- */
+.skeleton { display: grid; gap: 10px; padding: 4px 0 8px; }
+.skeleton i {
+  display: block; height: 14px; border-radius: 7px; width: 100%;
+  background: linear-gradient(90deg, var(--surface-2) 25%, var(--surface-3) 50%, var(--surface-2) 75%);
+  background-size: 200% 100%; animation: shimmer 1.4s linear infinite;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+.answer-foot svg.i { margin-right: 4px; vertical-align: -3px; }
+.hint { font-size: var(--fs-sm); color: var(--text-2); }
+.callout-head p.hint { margin-top: 8px; }
+.closest ul { display: grid; gap: 6px; }
+.closest li { padding: 0; margin: 0; }
+.closest-btn {
+  display: flex; align-items: center; gap: 12px; width: 100%; min-height: 48px; padding: 10px 12px; text-align: left;
+  border-radius: 10px; background: var(--surface); border: 1px solid var(--border); font-size: var(--fs-sm); color: var(--text);
+}
+.closest-btn:hover { border-color: var(--accent); }
+.closest-btn > span:nth-of-type(1) { min-width: 0; flex: 1; }
+.closest-btn .t { display: block; font-weight: 600; }
+.closest-btn .p { display: block; color: var(--text-2); font-size: var(--fs-xs); overflow-wrap: anywhere; }
+.closest-btn .tag { margin-left: auto; font-size: var(--fs-xs); color: var(--text-2); white-space: nowrap; }
+.audit-body .finding-list { display: grid; gap: 10px; }
+.finding-list li { display: flex; gap: 10px; align-items: flex-start; font-size: var(--fs-base); line-height: 1.5; }
+.finding-list .badge { flex: none; margin-top: 2px; }
+.audit-sum { margin-top: var(--sp-3); font-size: var(--fs-sm); color: var(--text-2); }
+.draft-body { white-space: pre-wrap; overflow-wrap: anywhere; }
+.audit-body { font-size: var(--fs-base); }
+
+/* ---------- Trace ---------- */
+@container (min-width: 620px) {
+  .steps { grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); }
+}
+.step-status { margin-top: 4px; }
+.trace-foot { align-items: center; }
+
+/* ---------- Approval queue ---------- */
+.q-error { margin: 10px 16px 0; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--danger-border); background: var(--danger-bg); color: var(--danger-text); font-size: var(--fs-xs); font-weight: 600; }
+.q-sub { overflow-wrap: anywhere; }
+.q-title { overflow-wrap: anywhere; }
+.q-scope .badge { margin-left: 2px; }
+.fix-row span:last-child { white-space: pre-wrap; }
+.diff-line { white-space: pre-wrap; }
+.docdiff .diff { margin-bottom: 0; }
+.q-card .draft { margin-bottom: 0; }
+.draft-cites { margin-top: 10px; font-size: var(--fs-xs); color: var(--text-2); display: flex; flex-wrap: wrap; align-items: center; gap: 4px; }
+.generic-payload { margin: 0; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--surface-2); font: 12px/1.5 var(--font-mono); white-space: pre-wrap; overflow-wrap: anywhere; max-height: 220px; overflow: auto; }
+.receipt { animation: slidein .4s var(--ease) backwards; }
+.q-card .q-actions .btn svg.i { margin-right: 0; }
+.queue-list { padding-top: 0; }
+
+/* ---------- Source drawer ---------- */
+.scrim { display: block; position: fixed; inset: 0; background: transparent; z-index: 39; }
+@media (max-width: 1023px) { .scrim { background: var(--scrim); } }
+.drawer-note { color: var(--text-2); font-size: var(--fs-sm); margin-bottom: 12px; }
+.drawer-head h2:focus-visible { outline-offset: 4px; }
+.passage { white-space: normal; }
+.passage-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.passage-text + .passage-text, .passage-text + .passage-table, .passage-table + .passage-text, .passage-table + .passage-table { margin-top: 10px; }
+.passage-table { overflow-x: auto; }
+.passage mark { color: var(--text); }
+.passage tr.cited th { background: var(--highlight); color: var(--text); }
+.quote { margin: 0; }
+
+@media (max-width: 1023px) {
+  .drawer { z-index: 40; }
+}
+
+/* ---------- Misc ---------- */
+@media (max-width: 520px) {
+  .composer-modes { gap: 6px; }
+  .answer-body { padding-left: 16px; padding-right: 16px; }
+  .answer-head, .answer-foot { padding-left: 16px; padding-right: 16px; }
+  .answer-sources { padding-left: 16px; padding-right: 16px; }
+}
+
+/* ---------- Review pass 1 ---------- */
+.source-link { text-align: left; }
+.passage-h { margin: 0 0 8px; font-size: var(--fs-sm); font-weight: 650; color: var(--text); }
+.passage-h:not(:first-child) { margin-top: 14px; }
+.passage tr.cited mark { background: none; box-shadow: none; padding: 0; font-weight: inherit; border-radius: 0; }
+@media (max-width: 1023px) {
+  .dock .composer-hint { display: none; }
+  .dock { padding-top: var(--sp-2); padding-bottom: var(--sp-3); }
+  .dock .composer-box { padding: 8px 8px 8px 12px; gap: 6px; }
+}
+.docdiff .q-scope { margin: 10px 0 0; }

@@ -1,0 +1,108 @@
+name: stacklight
+
+x-backend-env: &backend-env
+  DATABASE_URL: postgresql://stacklight:${POSTGRES_PASSWORD:-stacklight}@postgres:5432/stacklight
+  REDIS_URL: redis://redis:6379/0
+  # Provider keys: set the one matching LLM_MODEL in .env. Without any key runs fail cleanly
+  # with the "llm_unavailable" banner (retrieval and the UI still work).
+  ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+  OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+  LLM_MODEL: ${LLM_MODEL:-claude-haiku-5-5}
+  EMBEDDING_MODEL: ${EMBEDDING_MODEL:-BAAI/bge-small-en-v1.5}
+  EMBEDDING_DIM: ${EMBEDDING_DIM:-384}
+  RERANKER_MODEL: ${RERANKER_MODEL:-cross-encoder/ms-marco-MiniLM-L-6-v2}
+  DAILY_SPEND_CAP_USD: ${DAILY_SPEND_CAP_USD:-5}
+  RATE_LIMIT_PER_MIN: ${RATE_LIMIT_PER_MIN:-30}
+  # Operational settings (defaults match app/config.py). Keep in sync with .env.example (a test checks it).
+  TRUST_PROXY_HEADERS: ${TRUST_PROXY_HEADERS:-false}
+  DEMO_RESET_INTERVAL_H: ${DEMO_RESET_INTERVAL_H:-6}
+  DEMO_RESET_RETRY_S: ${DEMO_RESET_RETRY_S:-60}
+  AUTO_SEED: ${AUTO_SEED:-true}
+  MAX_STREAMS_PER_IP: ${MAX_STREAMS_PER_IP:-4}
+  MAX_PENDING_RUNS: ${MAX_PENDING_RUNS:-12}
+  MAX_CONCURRENT_RUNS: ${MAX_CONCURRENT_RUNS:-4}
+  RUN_TIMEOUT_S: ${RUN_TIMEOUT_S:-120}
+  UNKNOWN_COST_PER_RUN_USD: ${UNKNOWN_COST_PER_RUN_USD:-0.02}
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment: *backend-env
+    # Loopback only by default (the Cloudflare tunnel connects to localhost). To expose it
+    # deliberately, set STACKLIGHT_BIND=0.0.0.0 (or a LAN address) in .env; STACKLIGHT_PORT picks the port.
+    ports:
+      - "${STACKLIGHT_BIND:-127.0.0.1}:${STACKLIGHT_PORT:-8780}:8000"
+    depends_on:
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    volumes:
+      - hf_cache:/home/app/.cache/huggingface
+    mem_limit: 1g
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request as u; u.urlopen('http://127.0.0.1:8000/health', timeout=3)"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 15s
+    networks: [stacklight]
+    restart: unless-stopped
+
+  worker:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    command: ["celery", "-A", "app.tasks.celery_app", "worker", "--loglevel=INFO", "--concurrency=1"]
+    environment: *backend-env
+    depends_on:
+      postgres: {condition: service_healthy}
+      redis: {condition: service_healthy}
+    volumes:
+      - hf_cache:/home/app/.cache/huggingface
+    mem_limit: 1g
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A app.tasks.celery_app inspect ping -d celery@$$HOSTNAME --timeout 5"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+    networks: [stacklight]
+    restart: unless-stopped
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: stacklight
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-stacklight}
+      POSTGRES_DB: stacklight
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    mem_limit: 768m
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U stacklight -d stacklight"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks: [stacklight]
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru"]
+    mem_limit: 192m
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks: [stacklight]
+    restart: unless-stopped
+
+networks:
+  stacklight:
+    driver: bridge
+
+volumes:
+  pgdata:
+  hf_cache:

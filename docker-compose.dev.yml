@@ -1,0 +1,9 @@
+# Dev/test overlay: exposes postgres and redis on loopback high ports only.
+#   docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d postgres redis
+services:
+  postgres:
+    ports:
+      - "127.0.0.1:15432:5432"
+  redis:
+    ports:
+      - "127.0.0.1:16379:6379"

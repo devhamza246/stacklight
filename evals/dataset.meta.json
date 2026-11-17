@@ -1,0 +1,6 @@
+{
+  "reviewed": false,
+  "status": "drafted by Claude, pending author hand-check",
+  "format": "evals/dataset.jsonl, one JSON object per line: id, question, gold_sources (corpus-relative files), gold_snippets (parallel list of exact substrings that must appear in a retrieved chunk of the matching source), gold_answer, answerable",
+  "notes": "Set reviewed to true only after every row has been checked by the author."
+}

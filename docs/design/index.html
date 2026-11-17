@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stacklight design mockups</title>
+<link rel="stylesheet" href="tokens.css"><link rel="stylesheet" href="base.css">
+<style>.wrap{max-width:760px;margin:0 auto;padding:48px 16px}h1{font-size:28px;letter-spacing:-.02em;margin:0 0 8px}ul{margin:16px 0 32px;padding:0;list-style:none;display:grid;gap:8px}li a{display:flex;justify-content:space-between;gap:16px;padding:12px 16px;border:1px solid var(--border);border-radius:12px;background:var(--surface);text-decoration:none;color:var(--text)}li a:hover{border-color:var(--accent)}li span{color:var(--text-2);font-size:13px}h2{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--text-2)}</style></head>
+<body><main class="wrap"><h1>Stacklight design mockups</h1>
+<p style="color:var(--text-2)">Static HTML/CSS for the React build to follow. Append <code>?theme=dark</code> or <code>?theme=light</code> to any link; add <code>&amp;tab=trace|queue</code> on a narrow window. Figures are illustrative.</p>
+<h2>Chat (full screen: chat, trace, queue)</h2>
+<ul>
+<li><a href="chat.html?state=idle">Idle / first load <span>state=idle</span></a></li>
+<li><a href="chat.html?state=streaming">Mid-stream <span>state=streaming</span></a></li>
+<li><a href="chat.html?state=answer">Answer with citations <span>state=answer</span></a></li>
+<li><a href="chat.html?state=answer&drawer=1">Answer + source drawer <span>state=answer&amp;drawer=1</span></a></li>
+<li><a href="chat.html?state=abstain">Abstention: &ldquo;I&rsquo;m not sure&rdquo; <span>state=abstain</span></a></li>
+<li><a href="chat.html?state=paused">Demo paused (budget) <span>state=paused</span></a></li>
+<li><a href="chat.html?state=busy">Busy, try again (429) <span>state=busy</span></a></li>
+<li><a href="chat.html?state=resetting">Resetting (503) <span>state=resetting</span></a></li>
+<li><a href="chat.html?state=failed">Failed run, trace kept <span>state=failed</span></a></li></ul>
+<h2>Trace panel</h2>
+<ul>
+<li><a href="trace.html?state=done">Complete, with spans <span>state=done</span></a></li>
+<li><a href="trace.html?state=streaming">Running <span>state=streaming</span></a></li>
+<li><a href="trace.html?state=abstain">Abstained <span>state=abstain</span></a></li>
+<li><a href="trace.html?state=failed">Failed <span>state=failed</span></a></li>
+<li><a href="trace.html?state=idle">Idle <span>state=idle</span></a></li></ul>
+<h2>Approval queue</h2>
+<ul>
+<li><a href="approvals.html?state=pending">Three proposals (conflict diff, stale, draft reply) <span>state=pending</span></a></li>
+<li><a href="approvals.html?state=resolved">After approving <span>state=resolved</span></a></li>
+<li><a href="approvals.html?state=empty">Empty <span>state=empty</span></a></li></ul>
+</main><script src="mock.js"></script></body></html>

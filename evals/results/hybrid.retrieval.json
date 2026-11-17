@@ -1,0 +1,2730 @@
+{
+  "pipeline": "hybrid",
+  "retrieval_only": true,
+  "model": null,
+  "provider": null,
+  "temperature": null,
+  "embedding_model": "BAAI/bge-small-en-v1.5",
+  "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+  "dataset_sha256": "d276614d8daf100ead598697de759e81ee0251dd5c198547d5ee7e09bf716451",
+  "git_commit": "136249cdb6bd53173fcec6e874d9d449e3323651",
+  "timestamp": "2026-11-17T19:38:37+00:00",
+  "seed": 0,
+  "limit": 0,
+  "top_k": 8,
+  "metrics": {
+    "n_questions": 53,
+    "n_answerable": 45,
+    "hit_rate@1": 0.5111111111111111,
+    "hit_rate@3": 0.8666666666666667,
+    "hit_rate@5": 0.9333333333333333,
+    "hit_rate@8": 0.9333333333333333,
+    "mrr": 0.6811111111111111,
+    "mean_latency_ms": 2968.0188679245284
+  },
+  "rows": [
+    {
+      "id": "q01",
+      "question": "What is the monthly price of the Team plan?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 242,
+          "source": "corpus/tickets/T-1031.md",
+          "score": 4.133326530456543
+        },
+        {
+          "chunk_id": 30,
+          "source": "corpus/handbook/legacy-onboarding-checklist-2024.md",
+          "score": 4.067481994628906
+        },
+        {
+          "chunk_id": 37,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 2.22995924949646
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -0.17540714144706726
+        },
+        {
+          "chunk_id": 56,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": -2.930377721786499
+        },
+        {
+          "chunk_id": 7,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -6.160434246063232
+        },
+        {
+          "chunk_id": 251,
+          "source": "corpus/tickets/T-1034.md",
+          "score": -6.381742477416992
+        },
+        {
+          "chunk_id": 45,
+          "source": "corpus/handbook/sales-playbook-qualification.md",
+          "score": -7.140150547027588
+        }
+      ],
+      "top_score": 4.133326530456543,
+      "hit": true,
+      "hit_rank": 3,
+      "latency_ms": 13370
+    },
+    {
+      "id": "q02",
+      "question": "How much does Business cost per seat when billed annually?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 45,
+          "source": "corpus/handbook/sales-playbook-qualification.md",
+          "score": 6.249150276184082
+        },
+        {
+          "chunk_id": 242,
+          "source": "corpus/tickets/T-1031.md",
+          "score": 5.895075798034668
+        },
+        {
+          "chunk_id": 37,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 4.67918586730957
+        },
+        {
+          "chunk_id": 15,
+          "source": "corpus/handbook/competitive-battlecard.md",
+          "score": 4.454236030578613
+        },
+        {
+          "chunk_id": 30,
+          "source": "corpus/handbook/legacy-onboarding-checklist-2024.md",
+          "score": 2.059361696243286
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 1.6389660835266113
+        },
+        {
+          "chunk_id": 250,
+          "source": "corpus/tickets/T-1034.md",
+          "score": 0.8295055627822876
+        },
+        {
+          "chunk_id": 13,
+          "source": "corpus/handbook/competitive-battlecard.md",
+          "score": -3.1736717224121094
+        }
+      ],
+      "top_score": 6.249150276184082,
+      "hit": true,
+      "hit_rank": 3,
+      "latency_ms": 2436
+    },
+    {
+      "id": "q03",
+      "question": "What discount do I get for paying yearly instead of monthly?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 0.32564935088157654
+        },
+        {
+          "chunk_id": 43,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -1.719977855682373
+        },
+        {
+          "chunk_id": 251,
+          "source": "corpus/tickets/T-1034.md",
+          "score": -2.2221555709838867
+        },
+        {
+          "chunk_id": 242,
+          "source": "corpus/tickets/T-1031.md",
+          "score": -3.598008155822754
+        },
+        {
+          "chunk_id": 241,
+          "source": "corpus/tickets/T-1031.md",
+          "score": -4.687576770782471
+        },
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -4.958670616149902
+        },
+        {
+          "chunk_id": 40,
+          "source": "corpus/handbook/refund-policy.md",
+          "score": -5.011904239654541
+        },
+        {
+          "chunk_id": 7,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -5.433347702026367
+        }
+      ],
+      "top_score": 0.32564935088157654,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2521
+    },
+    {
+      "id": "q04",
+      "question": "How are extra runs charged on Team and Business?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 6.8195390701293945
+        },
+        {
+          "chunk_id": 7,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": 3.4316861629486084
+        },
+        {
+          "chunk_id": 226,
+          "source": "corpus/tickets/T-1026.md",
+          "score": -1.1499258279800415
+        },
+        {
+          "chunk_id": 227,
+          "source": "corpus/tickets/T-1026.md",
+          "score": -3.68790340423584
+        },
+        {
+          "chunk_id": 269,
+          "source": "corpus/tickets/T-1040.md",
+          "score": -3.763978958129883
+        },
+        {
+          "chunk_id": 33,
+          "source": "corpus/handbook/plan-limits-reference.md",
+          "score": -4.988208770751953
+        },
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -6.607585906982422
+        },
+        {
+          "chunk_id": 152,
+          "source": "corpus/tickets/T-1001.md",
+          "score": -6.9511919021606445
+        }
+      ],
+      "top_score": 6.8195390701293945,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2238
+    },
+    {
+      "id": "q05",
+      "question": "Is there a free trial and does it need a credit card?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 203,
+          "source": "corpus/tickets/T-1018.md",
+          "score": -1.7677030563354492
+        },
+        {
+          "chunk_id": 202,
+          "source": "corpus/tickets/T-1018.md",
+          "score": -2.3569998741149902
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -3.3817873001098633
+        },
+        {
+          "chunk_id": 265,
+          "source": "corpus/tickets/T-1039.md",
+          "score": -9.066766738891602
+        },
+        {
+          "chunk_id": 264,
+          "source": "corpus/tickets/T-1039.md",
+          "score": -9.201047897338867
+        },
+        {
+          "chunk_id": 29,
+          "source": "corpus/handbook/invoicing-and-payment-methods.md",
+          "score": -9.275276184082031
+        },
+        {
+          "chunk_id": 201,
+          "source": "corpus/tickets/T-1018.md",
+          "score": -9.392584800720215
+        },
+        {
+          "chunk_id": 47,
+          "source": "corpus/handbook/sales-playbook-qualification.md",
+          "score": -10.743985176086426
+        }
+      ],
+      "top_score": -1.7677030563354492,
+      "hit": true,
+      "hit_rank": 3,
+      "latency_ms": 2515
+    },
+    {
+      "id": "q06",
+      "question": "Which plans include SCIM provisioning?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 60,
+          "source": "corpus/handbook/sso-and-scim-setup.md",
+          "score": 2.5656137466430664
+        },
+        {
+          "chunk_id": 159,
+          "source": "corpus/tickets/T-1004.md",
+          "score": 1.935777187347412
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 1.5867794752120972
+        },
+        {
+          "chunk_id": 160,
+          "source": "corpus/tickets/T-1004.md",
+          "score": 0.9463438987731934
+        },
+        {
+          "chunk_id": 161,
+          "source": "corpus/tickets/T-1004.md",
+          "score": -3.448305130004883
+        },
+        {
+          "chunk_id": 21,
+          "source": "corpus/handbook/enterprise-onboarding-playbook.md",
+          "score": -4.593279838562012
+        },
+        {
+          "chunk_id": 62,
+          "source": "corpus/handbook/sso-and-scim-setup.md",
+          "score": -5.16987943649292
+        },
+        {
+          "chunk_id": 186,
+          "source": "corpus/tickets/T-1013.md",
+          "score": -10.622604370117188
+        }
+      ],
+      "top_score": 2.5656137466430664,
+      "hit": true,
+      "hit_rank": 3,
+      "latency_ms": 1205
+    },
+    {
+      "id": "q07",
+      "question": "Do nonprofits get a discount?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 0.762087881565094
+        },
+        {
+          "chunk_id": 251,
+          "source": "corpus/tickets/T-1034.md",
+          "score": -7.465878486633301
+        },
+        {
+          "chunk_id": 43,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -8.108503341674805
+        },
+        {
+          "chunk_id": 240,
+          "source": "corpus/tickets/T-1031.md",
+          "score": -10.515678405761719
+        },
+        {
+          "chunk_id": 42,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -10.561628341674805
+        },
+        {
+          "chunk_id": 71,
+          "source": "corpus/oss/commander-contributing.md",
+          "score": -10.881156921386719
+        },
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -11.090795516967773
+        },
+        {
+          "chunk_id": 5,
+          "source": "corpus/handbook/benefits-and-stipends.md",
+          "score": -11.263915061950684
+        }
+      ],
+      "top_score": 0.762087881565094,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2104
+    },
+    {
+      "id": "q08",
+      "question": "What uptime SLA does the Business plan guarantee?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 56,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": 3.1207659244537354
+        },
+        {
+          "chunk_id": 216,
+          "source": "corpus/tickets/T-1023.md",
+          "score": -2.108980655670166
+        },
+        {
+          "chunk_id": 218,
+          "source": "corpus/tickets/T-1023.md",
+          "score": -2.8511602878570557
+        },
+        {
+          "chunk_id": 177,
+          "source": "corpus/tickets/T-1010.md",
+          "score": -5.8184814453125
+        },
+        {
+          "chunk_id": 179,
+          "source": "corpus/tickets/T-1010.md",
+          "score": -7.075977325439453
+        },
+        {
+          "chunk_id": 55,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": -7.772725582122803
+        },
+        {
+          "chunk_id": 159,
+          "source": "corpus/tickets/T-1004.md",
+          "score": -10.152462005615234
+        },
+        {
+          "chunk_id": 237,
+          "source": "corpus/tickets/T-1030.md",
+          "score": -10.437695503234863
+        }
+      ],
+      "top_score": 3.1207659244537354,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 1250
+    },
+    {
+      "id": "q09",
+      "question": "What uptime percentage is promised to Enterprise customers?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 56,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": 5.432060241699219
+        },
+        {
+          "chunk_id": 179,
+          "source": "corpus/tickets/T-1010.md",
+          "score": 4.81123161315918
+        },
+        {
+          "chunk_id": 178,
+          "source": "corpus/tickets/T-1010.md",
+          "score": -6.594718933105469
+        },
+        {
+          "chunk_id": 17,
+          "source": "corpus/handbook/customer-onboarding-guide.md",
+          "score": -7.518501281738281
+        },
+        {
+          "chunk_id": 198,
+          "source": "corpus/tickets/T-1017.md",
+          "score": -7.989850997924805
+        },
+        {
+          "chunk_id": 20,
+          "source": "corpus/handbook/enterprise-onboarding-playbook.md",
+          "score": -8.126145362854004
+        },
+        {
+          "chunk_id": 160,
+          "source": "corpus/tickets/T-1004.md",
+          "score": -8.206853866577148
+        },
+        {
+          "chunk_id": 243,
+          "source": "corpus/tickets/T-1032.md",
+          "score": -8.526302337646484
+        }
+      ],
+      "top_score": 5.432060241699219,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 1178
+    },
+    {
+      "id": "q10",
+      "question": "How fast does Enterprise support respond to a P1?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 65,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": 4.396792411804199
+        },
+        {
+          "chunk_id": 218,
+          "source": "corpus/tickets/T-1023.md",
+          "score": 3.9816689491271973
+        },
+        {
+          "chunk_id": 57,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": 3.3447420597076416
+        },
+        {
+          "chunk_id": 217,
+          "source": "corpus/tickets/T-1023.md",
+          "score": -1.9182357788085938
+        },
+        {
+          "chunk_id": 198,
+          "source": "corpus/tickets/T-1017.md",
+          "score": -2.74125599861145
+        },
+        {
+          "chunk_id": 3,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -4.641554832458496
+        },
+        {
+          "chunk_id": 17,
+          "source": "corpus/handbook/customer-onboarding-guide.md",
+          "score": -4.830293655395508
+        },
+        {
+          "chunk_id": 176,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -4.881561756134033
+        }
+      ],
+      "top_score": 4.396792411804199,
+      "hit": true,
+      "hit_rank": 3,
+      "latency_ms": 1894
+    },
+    {
+      "id": "q11",
+      "question": "What is the P1 first response time for Business customers?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 218,
+          "source": "corpus/tickets/T-1023.md",
+          "score": 7.932310581207275
+        },
+        {
+          "chunk_id": 57,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": 5.318429946899414
+        },
+        {
+          "chunk_id": 65,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": 2.2152352333068848
+        },
+        {
+          "chunk_id": 216,
+          "source": "corpus/tickets/T-1023.md",
+          "score": 1.917259693145752
+        },
+        {
+          "chunk_id": 217,
+          "source": "corpus/tickets/T-1023.md",
+          "score": 1.7660892009735107
+        },
+        {
+          "chunk_id": 27,
+          "source": "corpus/handbook/incident-response-policy.md",
+          "score": -3.43424129486084
+        },
+        {
+          "chunk_id": 198,
+          "source": "corpus/tickets/T-1017.md",
+          "score": -3.581447124481201
+        },
+        {
+          "chunk_id": 35,
+          "source": "corpus/handbook/postmortem-process.md",
+          "score": -4.953341960906982
+        }
+      ],
+      "top_score": 7.932310581207275,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 1840
+    },
+    {
+      "id": "q12",
+      "question": "How much service credit is owed if uptime falls to 98%?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 179,
+          "source": "corpus/tickets/T-1010.md",
+          "score": 4.659132957458496
+        },
+        {
+          "chunk_id": 56,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": 4.415764808654785
+        },
+        {
+          "chunk_id": 66,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": -6.486520767211914
+        },
+        {
+          "chunk_id": 178,
+          "source": "corpus/tickets/T-1010.md",
+          "score": -7.050156116485596
+        },
+        {
+          "chunk_id": 43,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -7.5169830322265625
+        },
+        {
+          "chunk_id": 251,
+          "source": "corpus/tickets/T-1034.md",
+          "score": -8.159786224365234
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -8.36850357055664
+        },
+        {
+          "chunk_id": 226,
+          "source": "corpus/tickets/T-1026.md",
+          "score": -8.512691497802734
+        }
+      ],
+      "top_score": 4.659132957458496,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 2167
+    },
+    {
+      "id": "q13",
+      "question": "How long do I have to claim an SLA credit?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 56,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": 4.620846271514893
+        },
+        {
+          "chunk_id": 218,
+          "source": "corpus/tickets/T-1023.md",
+          "score": -2.0623645782470703
+        },
+        {
+          "chunk_id": 177,
+          "source": "corpus/tickets/T-1010.md",
+          "score": -3.577179431915283
+        },
+        {
+          "chunk_id": 203,
+          "source": "corpus/tickets/T-1018.md",
+          "score": -6.990971565246582
+        },
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -6.998102188110352
+        },
+        {
+          "chunk_id": 55,
+          "source": "corpus/handbook/sla-and-support-tiers.md",
+          "score": -7.467755317687988
+        },
+        {
+          "chunk_id": 44,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -7.978675365447998
+        },
+        {
+          "chunk_id": 216,
+          "source": "corpus/tickets/T-1023.md",
+          "score": -8.565622329711914
+        }
+      ],
+      "top_score": 4.620846271514893,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 1986
+    },
+    {
+      "id": "q14",
+      "question": "What are the API rate limits per plan?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 33,
+          "source": "corpus/handbook/plan-limits-reference.md",
+          "score": 3.2185988426208496
+        },
+        {
+          "chunk_id": 3,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": 1.5909242630004883
+        },
+        {
+          "chunk_id": 2,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -0.288074254989624
+        },
+        {
+          "chunk_id": 30,
+          "source": "corpus/handbook/legacy-onboarding-checklist-2024.md",
+          "score": -2.798433780670166
+        },
+        {
+          "chunk_id": 222,
+          "source": "corpus/tickets/T-1025.md",
+          "score": -3.417598247528076
+        },
+        {
+          "chunk_id": 4,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -3.539215564727783
+        },
+        {
+          "chunk_id": 48,
+          "source": "corpus/handbook/salesforce-integration.md",
+          "score": -5.642024517059326
+        },
+        {
+          "chunk_id": 205,
+          "source": "corpus/tickets/T-1019.md",
+          "score": -7.582950592041016
+        }
+      ],
+      "top_score": 3.2185988426208496,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 2269
+    },
+    {
+      "id": "q15",
+      "question": "What does HTTP 429 mean when calling the API?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 3,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": 1.0675632953643799
+        },
+        {
+          "chunk_id": 154,
+          "source": "corpus/tickets/T-1002.md",
+          "score": -0.39051681756973267
+        },
+        {
+          "chunk_id": 70,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -0.6784388422966003
+        },
+        {
+          "chunk_id": 223,
+          "source": "corpus/tickets/T-1025.md",
+          "score": -3.5521624088287354
+        },
+        {
+          "chunk_id": 4,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -5.773167610168457
+        },
+        {
+          "chunk_id": 175,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -6.832161903381348
+        },
+        {
+          "chunk_id": 153,
+          "source": "corpus/tickets/T-1002.md",
+          "score": -7.247873306274414
+        },
+        {
+          "chunk_id": 1,
+          "source": "corpus/handbook/api-getting-started.md",
+          "score": -7.433246612548828
+        }
+      ],
+      "top_score": 1.0675632953643799,
+      "hit": true,
+      "hit_rank": 5,
+      "latency_ms": 4995
+    },
+    {
+      "id": "q16",
+      "question": "What does a 409 error from the API indicate?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 4,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -1.1396260261535645
+        },
+        {
+          "chunk_id": 2,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -4.439846038818359
+        },
+        {
+          "chunk_id": 3,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -5.415041446685791
+        },
+        {
+          "chunk_id": 175,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -6.3391523361206055
+        },
+        {
+          "chunk_id": 204,
+          "source": "corpus/tickets/T-1019.md",
+          "score": -8.850872039794922
+        },
+        {
+          "chunk_id": 162,
+          "source": "corpus/tickets/T-1005.md",
+          "score": -9.566518783569336
+        },
+        {
+          "chunk_id": 143,
+          "source": "corpus/oss/commander-readme.md",
+          "score": -10.094703674316406
+        },
+        {
+          "chunk_id": 223,
+          "source": "corpus/tickets/T-1025.md",
+          "score": -10.16763687133789
+        }
+      ],
+      "top_score": -1.1396260261535645,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 1578
+    },
+    {
+      "id": "q17",
+      "question": "What is the API base URL?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 62,
+          "source": "corpus/handbook/sso-and-scim-setup.md",
+          "score": 3.0355923175811768
+        },
+        {
+          "chunk_id": 1,
+          "source": "corpus/handbook/api-getting-started.md",
+          "score": 1.4729657173156738
+        },
+        {
+          "chunk_id": 30,
+          "source": "corpus/handbook/legacy-onboarding-checklist-2024.md",
+          "score": -2.300440788269043
+        },
+        {
+          "chunk_id": 162,
+          "source": "corpus/tickets/T-1005.md",
+          "score": -8.626096725463867
+        },
+        {
+          "chunk_id": 70,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -8.805870056152344
+        },
+        {
+          "chunk_id": 48,
+          "source": "corpus/handbook/salesforce-integration.md",
+          "score": -8.810672760009766
+        },
+        {
+          "chunk_id": 3,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -9.310016632080078
+        },
+        {
+          "chunk_id": 204,
+          "source": "corpus/tickets/T-1019.md",
+          "score": -9.327518463134766
+        }
+      ],
+      "top_score": 3.0355923175811768,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 5192
+    },
+    {
+      "id": "q18",
+      "question": "How long are idempotency keys remembered?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 1,
+          "source": "corpus/handbook/api-getting-started.md",
+          "score": -2.6916818618774414
+        },
+        {
+          "chunk_id": 4,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -2.804919958114624
+        },
+        {
+          "chunk_id": 53,
+          "source": "corpus/handbook/security-overview.md",
+          "score": -7.175320625305176
+        },
+        {
+          "chunk_id": 164,
+          "source": "corpus/tickets/T-1005.md",
+          "score": -9.116870880126953
+        },
+        {
+          "chunk_id": 158,
+          "source": "corpus/tickets/T-1003.md",
+          "score": -9.682645797729492
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": -9.837955474853516
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -10.09054183959961
+        },
+        {
+          "chunk_id": 54,
+          "source": "corpus/handbook/security-overview.md",
+          "score": -10.210259437561035
+        }
+      ],
+      "top_score": -2.6916818618774414,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 5310
+    },
+    {
+      "id": "q19",
+      "question": "What is the maximum page size for list endpoints?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 206,
+          "source": "corpus/tickets/T-1019.md",
+          "score": 1.722011685371399
+        },
+        {
+          "chunk_id": 70,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -6.36314058303833
+        },
+        {
+          "chunk_id": 33,
+          "source": "corpus/handbook/plan-limits-reference.md",
+          "score": -8.20468807220459
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -8.56158447265625
+        },
+        {
+          "chunk_id": 1,
+          "source": "corpus/handbook/api-getting-started.md",
+          "score": -8.575067520141602
+        },
+        {
+          "chunk_id": 153,
+          "source": "corpus/tickets/T-1002.md",
+          "score": -10.267999649047852
+        },
+        {
+          "chunk_id": 205,
+          "source": "corpus/tickets/T-1019.md",
+          "score": -10.2997407913208
+        },
+        {
+          "chunk_id": 182,
+          "source": "corpus/tickets/T-1011.md",
+          "score": -10.893567085266113
+        }
+      ],
+      "top_score": 1.722011685371399,
+      "hit": true,
+      "hit_rank": 5,
+      "latency_ms": 3526
+    },
+    {
+      "id": "q20",
+      "question": "What happens to API tokens that go unused?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 62,
+          "source": "corpus/handbook/sso-and-scim-setup.md",
+          "score": 1.798915982246399
+        },
+        {
+          "chunk_id": 1,
+          "source": "corpus/handbook/api-getting-started.md",
+          "score": 0.6012665033340454
+        },
+        {
+          "chunk_id": 164,
+          "source": "corpus/tickets/T-1005.md",
+          "score": 0.23187395930290222
+        },
+        {
+          "chunk_id": 162,
+          "source": "corpus/tickets/T-1005.md",
+          "score": -2.4547762870788574
+        },
+        {
+          "chunk_id": 51,
+          "source": "corpus/handbook/security-overview.md",
+          "score": -2.6026344299316406
+        },
+        {
+          "chunk_id": 4,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -3.490792989730835
+        },
+        {
+          "chunk_id": 3,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -7.278927803039551
+        },
+        {
+          "chunk_id": 253,
+          "source": "corpus/tickets/T-1035.md",
+          "score": -7.289804458618164
+        }
+      ],
+      "top_score": 1.798915982246399,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 3394
+    },
+    {
+      "id": "q21",
+      "question": "How many steps can a flow have on the Free plan?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 37,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 1.4828320741653442
+        },
+        {
+          "chunk_id": 33,
+          "source": "corpus/handbook/plan-limits-reference.md",
+          "score": 0.5713735222816467
+        },
+        {
+          "chunk_id": 16,
+          "source": "corpus/handbook/customer-onboarding-guide.md",
+          "score": -2.265592336654663
+        },
+        {
+          "chunk_id": 152,
+          "source": "corpus/tickets/T-1001.md",
+          "score": -3.6937825679779053
+        },
+        {
+          "chunk_id": 4,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -5.14458703994751
+        },
+        {
+          "chunk_id": 213,
+          "source": "corpus/tickets/T-1022.md",
+          "score": -5.557137489318848
+        },
+        {
+          "chunk_id": 176,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -6.420717716217041
+        },
+        {
+          "chunk_id": 15,
+          "source": "corpus/handbook/competitive-battlecard.md",
+          "score": -6.73110294342041
+        }
+      ],
+      "top_score": 1.4828320741653442,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 2574
+    },
+    {
+      "id": "q22",
+      "question": "How long are run logs kept on the Business plan?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 194,
+          "source": "corpus/tickets/T-1015.md",
+          "score": 7.871484756469727
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": 5.323217391967773
+        },
+        {
+          "chunk_id": 33,
+          "source": "corpus/handbook/plan-limits-reference.md",
+          "score": 2.62692928314209
+        },
+        {
+          "chunk_id": 22,
+          "source": "corpus/handbook/enterprise-onboarding-playbook.md",
+          "score": -0.939306378364563
+        },
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -2.4506287574768066
+        },
+        {
+          "chunk_id": 176,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -3.215616464614868
+        },
+        {
+          "chunk_id": 52,
+          "source": "corpus/handbook/security-overview.md",
+          "score": -3.594226598739624
+        },
+        {
+          "chunk_id": 17,
+          "source": "corpus/handbook/customer-onboarding-guide.md",
+          "score": -4.199464797973633
+        }
+      ],
+      "top_score": 7.871484756469727,
+      "hit": true,
+      "hit_rank": 3,
+      "latency_ms": 2849
+    },
+    {
+      "id": "q23",
+      "question": "What is the maximum run timeout on Enterprise?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 176,
+          "source": "corpus/tickets/T-1009.md",
+          "score": 5.634268760681152
+        },
+        {
+          "chunk_id": 33,
+          "source": "corpus/handbook/plan-limits-reference.md",
+          "score": 2.1572160720825195
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -2.4998700618743896
+        },
+        {
+          "chunk_id": 17,
+          "source": "corpus/handbook/customer-onboarding-guide.md",
+          "score": -3.233727216720581
+        },
+        {
+          "chunk_id": 22,
+          "source": "corpus/handbook/enterprise-onboarding-playbook.md",
+          "score": -3.3394577503204346
+        },
+        {
+          "chunk_id": 215,
+          "source": "corpus/tickets/T-1022.md",
+          "score": -5.084747314453125
+        },
+        {
+          "chunk_id": 25,
+          "source": "corpus/handbook/incident-response-policy.md",
+          "score": -5.844892501831055
+        },
+        {
+          "chunk_id": 3,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -6.07807731628418
+        }
+      ],
+      "top_score": 5.634268760681152,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 2585
+    },
+    {
+      "id": "q24",
+      "question": "What happens when a Free workspace uses up its included runs?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -1.9593939781188965
+        },
+        {
+          "chunk_id": 150,
+          "source": "corpus/tickets/T-1001.md",
+          "score": -1.9903388023376465
+        },
+        {
+          "chunk_id": 260,
+          "source": "corpus/tickets/T-1037.md",
+          "score": -2.5590615272521973
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": -2.5738892555236816
+        },
+        {
+          "chunk_id": 37,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -4.039020538330078
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -4.394718647003174
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -5.281930923461914
+        },
+        {
+          "chunk_id": 16,
+          "source": "corpus/handbook/customer-onboarding-guide.md",
+          "score": -5.593888282775879
+        }
+      ],
+      "top_score": -1.9593939781188965,
+      "hit": false,
+      "hit_rank": null,
+      "latency_ms": 4313
+    },
+    {
+      "id": "q25",
+      "question": "Can I move my workspace from the US region to the EU region?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 169,
+          "source": "corpus/tickets/T-1007.md",
+          "score": 4.413480758666992
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": 1.4027721881866455
+        },
+        {
+          "chunk_id": 170,
+          "source": "corpus/tickets/T-1007.md",
+          "score": -0.12364841997623444
+        },
+        {
+          "chunk_id": 168,
+          "source": "corpus/tickets/T-1007.md",
+          "score": -4.449674129486084
+        },
+        {
+          "chunk_id": 16,
+          "source": "corpus/handbook/customer-onboarding-guide.md",
+          "score": -4.649805068969727
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -9.119119644165039
+        },
+        {
+          "chunk_id": 212,
+          "source": "corpus/tickets/T-1021.md",
+          "score": -9.572258949279785
+        },
+        {
+          "chunk_id": 211,
+          "source": "corpus/tickets/T-1021.md",
+          "score": -9.600851058959961
+        }
+      ],
+      "top_score": 4.413480758666992,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 4635
+    },
+    {
+      "id": "q26",
+      "question": "How often are databases backed up and how long are backups kept?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 52,
+          "source": "corpus/handbook/security-overview.md",
+          "score": 9.158781051635742
+        },
+        {
+          "chunk_id": 22,
+          "source": "corpus/handbook/enterprise-onboarding-playbook.md",
+          "score": -0.8285441398620605
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": -1.0363116264343262
+        },
+        {
+          "chunk_id": 194,
+          "source": "corpus/tickets/T-1015.md",
+          "score": -3.7318787574768066
+        },
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -7.43792724609375
+        },
+        {
+          "chunk_id": 191,
+          "source": "corpus/tickets/T-1014.md",
+          "score": -7.5119309425354
+        },
+        {
+          "chunk_id": 147,
+          "source": "corpus/oss/commander-release-policy.md",
+          "score": -7.548342704772949
+        },
+        {
+          "chunk_id": 197,
+          "source": "corpus/tickets/T-1016.md",
+          "score": -8.099371910095215
+        }
+      ],
+      "top_score": 9.158781051635742,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 3046
+    },
+    {
+      "id": "q27",
+      "question": "Does Quillbase sign HIPAA BAAs?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 236,
+          "source": "corpus/tickets/T-1029.md",
+          "score": 7.456876277923584
+        },
+        {
+          "chunk_id": 50,
+          "source": "corpus/handbook/security-overview.md",
+          "score": 2.9930520057678223
+        },
+        {
+          "chunk_id": 263,
+          "source": "corpus/tickets/T-1038.md",
+          "score": -2.3907699584960938
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -3.4398245811462402
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": -5.233963966369629
+        },
+        {
+          "chunk_id": 48,
+          "source": "corpus/handbook/salesforce-integration.md",
+          "score": -5.41032600402832
+        },
+        {
+          "chunk_id": 235,
+          "source": "corpus/tickets/T-1029.md",
+          "score": -5.4363603591918945
+        },
+        {
+          "chunk_id": 59,
+          "source": "corpus/handbook/slack-integration.md",
+          "score": -5.458028793334961
+        }
+      ],
+      "top_score": 7.456876277923584,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 2535
+    },
+    {
+      "id": "q28",
+      "question": "How many times are failed webhook deliveries retried?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": 7.615780830383301
+        },
+        {
+          "chunk_id": 191,
+          "source": "corpus/tickets/T-1014.md",
+          "score": 6.19854736328125
+        },
+        {
+          "chunk_id": 190,
+          "source": "corpus/tickets/T-1014.md",
+          "score": -1.3855575323104858
+        },
+        {
+          "chunk_id": 261,
+          "source": "corpus/tickets/T-1038.md",
+          "score": -3.0061702728271484
+        },
+        {
+          "chunk_id": 189,
+          "source": "corpus/tickets/T-1014.md",
+          "score": -3.723585605621338
+        },
+        {
+          "chunk_id": 260,
+          "source": "corpus/tickets/T-1037.md",
+          "score": -3.970089912414551
+        },
+        {
+          "chunk_id": 230,
+          "source": "corpus/tickets/T-1027.md",
+          "score": -4.499472141265869
+        },
+        {
+          "chunk_id": 154,
+          "source": "corpus/tickets/T-1002.md",
+          "score": -5.369217872619629
+        }
+      ],
+      "top_score": 7.615780830383301,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 1180
+    },
+    {
+      "id": "q29",
+      "question": "Which header carries the webhook signature?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": 4.607454299926758
+        },
+        {
+          "chunk_id": 261,
+          "source": "corpus/tickets/T-1038.md",
+          "score": 0.675459623336792
+        },
+        {
+          "chunk_id": 70,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -2.408810615539551
+        },
+        {
+          "chunk_id": 68,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -3.4079296588897705
+        },
+        {
+          "chunk_id": 155,
+          "source": "corpus/tickets/T-1002.md",
+          "score": -4.402210235595703
+        },
+        {
+          "chunk_id": 154,
+          "source": "corpus/tickets/T-1002.md",
+          "score": -4.535849094390869
+        },
+        {
+          "chunk_id": 230,
+          "source": "corpus/tickets/T-1027.md",
+          "score": -4.783975601196289
+        },
+        {
+          "chunk_id": 153,
+          "source": "corpus/tickets/T-1002.md",
+          "score": -4.899537563323975
+        }
+      ],
+      "top_score": 4.607454299926758,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 5042
+    },
+    {
+      "id": "q30",
+      "question": "What is the SEV1 status page update cadence?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 27,
+          "source": "corpus/handbook/incident-response-policy.md",
+          "score": 4.506147384643555
+        },
+        {
+          "chunk_id": 35,
+          "source": "corpus/handbook/postmortem-process.md",
+          "score": 0.5718092918395996
+        },
+        {
+          "chunk_id": 25,
+          "source": "corpus/handbook/incident-response-policy.md",
+          "score": -2.799990177154541
+        },
+        {
+          "chunk_id": 200,
+          "source": "corpus/tickets/T-1017.md",
+          "score": -4.192437171936035
+        },
+        {
+          "chunk_id": 147,
+          "source": "corpus/oss/commander-release-policy.md",
+          "score": -8.870817184448242
+        },
+        {
+          "chunk_id": 198,
+          "source": "corpus/tickets/T-1017.md",
+          "score": -9.929792404174805
+        },
+        {
+          "chunk_id": 65,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": -10.403854370117188
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -10.582616806030273
+        }
+      ],
+      "top_score": 4.506147384643555,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2964
+    },
+    {
+      "id": "q31",
+      "question": "How much can a support agent refund without approval?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 66,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": 5.747011184692383
+        },
+        {
+          "chunk_id": 173,
+          "source": "corpus/tickets/T-1008.md",
+          "score": -0.5171070694923401
+        },
+        {
+          "chunk_id": 251,
+          "source": "corpus/tickets/T-1034.md",
+          "score": -0.8070298433303833
+        },
+        {
+          "chunk_id": 40,
+          "source": "corpus/handbook/refund-policy.md",
+          "score": -2.1682558059692383
+        },
+        {
+          "chunk_id": 23,
+          "source": "corpus/handbook/expense-policy.md",
+          "score": -5.692437171936035
+        },
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -7.550021171569824
+        },
+        {
+          "chunk_id": 221,
+          "source": "corpus/tickets/T-1024.md",
+          "score": -8.435369491577148
+        },
+        {
+          "chunk_id": 63,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": -8.756776809692383
+        }
+      ],
+      "top_score": 5.747011184692383,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2467
+    },
+    {
+      "id": "q32",
+      "question": "How many PTO days do full-time employees get?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 39,
+          "source": "corpus/handbook/pto-and-holidays.md",
+          "score": 6.144667625427246
+        },
+        {
+          "chunk_id": 41,
+          "source": "corpus/handbook/remote-work-policy.md",
+          "score": -4.0286102294921875
+        },
+        {
+          "chunk_id": 19,
+          "source": "corpus/handbook/employee-onboarding.md",
+          "score": -4.448223114013672
+        },
+        {
+          "chunk_id": 47,
+          "source": "corpus/handbook/sales-playbook-qualification.md",
+          "score": -6.246048927307129
+        },
+        {
+          "chunk_id": 194,
+          "source": "corpus/tickets/T-1015.md",
+          "score": -6.761427879333496
+        },
+        {
+          "chunk_id": 32,
+          "source": "corpus/handbook/performance-reviews.md",
+          "score": -7.519901752471924
+        },
+        {
+          "chunk_id": 203,
+          "source": "corpus/tickets/T-1018.md",
+          "score": -7.647851467132568
+        },
+        {
+          "chunk_id": 53,
+          "source": "corpus/handbook/security-overview.md",
+          "score": -8.07717227935791
+        }
+      ],
+      "top_score": 6.144667625427246,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2522
+    },
+    {
+      "id": "q33",
+      "question": "What is the on-call stipend?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 31,
+          "source": "corpus/handbook/oncall-handbook.md",
+          "score": 2.1053032875061035
+        },
+        {
+          "chunk_id": 5,
+          "source": "corpus/handbook/benefits-and-stipends.md",
+          "score": -5.672763347625732
+        },
+        {
+          "chunk_id": 26,
+          "source": "corpus/handbook/incident-response-policy.md",
+          "score": -7.318642616271973
+        },
+        {
+          "chunk_id": 245,
+          "source": "corpus/tickets/T-1032.md",
+          "score": -10.301599502563477
+        },
+        {
+          "chunk_id": 17,
+          "source": "corpus/handbook/customer-onboarding-guide.md",
+          "score": -10.893310546875
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -10.992262840270996
+        },
+        {
+          "chunk_id": 47,
+          "source": "corpus/handbook/sales-playbook-qualification.md",
+          "score": -11.030036926269531
+        },
+        {
+          "chunk_id": 29,
+          "source": "corpus/handbook/invoicing-and-payment-methods.md",
+          "score": -11.161865234375
+        }
+      ],
+      "top_score": 2.1053032875061035,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2059
+    },
+    {
+      "id": "q34",
+      "question": "What was the resolution of ticket T-1010?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 177,
+          "source": "corpus/tickets/T-1010.md",
+          "score": -0.27730607986450195
+        },
+        {
+          "chunk_id": 192,
+          "source": "corpus/tickets/T-1015.md",
+          "score": -0.5794689059257507
+        },
+        {
+          "chunk_id": 237,
+          "source": "corpus/tickets/T-1030.md",
+          "score": -0.6688181161880493
+        },
+        {
+          "chunk_id": 213,
+          "source": "corpus/tickets/T-1022.md",
+          "score": -0.6977713108062744
+        },
+        {
+          "chunk_id": 204,
+          "source": "corpus/tickets/T-1019.md",
+          "score": -1.5605063438415527
+        },
+        {
+          "chunk_id": 267,
+          "source": "corpus/tickets/T-1040.md",
+          "score": -1.5867106914520264
+        },
+        {
+          "chunk_id": 240,
+          "source": "corpus/tickets/T-1031.md",
+          "score": -1.7677794694900513
+        },
+        {
+          "chunk_id": 264,
+          "source": "corpus/tickets/T-1039.md",
+          "score": -1.7922531366348267
+        }
+      ],
+      "top_score": -0.27730607986450195,
+      "hit": false,
+      "hit_rank": null,
+      "latency_ms": 413
+    },
+    {
+      "id": "q35",
+      "question": "What happened in T-1007?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 156,
+          "source": "corpus/tickets/T-1003.md",
+          "score": -2.4247374534606934
+        },
+        {
+          "chunk_id": 174,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -2.7591333389282227
+        },
+        {
+          "chunk_id": 258,
+          "source": "corpus/tickets/T-1037.md",
+          "score": -4.138143539428711
+        },
+        {
+          "chunk_id": 153,
+          "source": "corpus/tickets/T-1002.md",
+          "score": -4.898648262023926
+        },
+        {
+          "chunk_id": 228,
+          "source": "corpus/tickets/T-1027.md",
+          "score": -5.312559604644775
+        },
+        {
+          "chunk_id": 159,
+          "source": "corpus/tickets/T-1004.md",
+          "score": -5.497702121734619
+        },
+        {
+          "chunk_id": 198,
+          "source": "corpus/tickets/T-1017.md",
+          "score": -5.736370086669922
+        },
+        {
+          "chunk_id": 267,
+          "source": "corpus/tickets/T-1040.md",
+          "score": -7.106007099151611
+        }
+      ],
+      "top_score": -2.4247374534606934,
+      "hit": false,
+      "hit_rank": null,
+      "latency_ms": 818
+    },
+    {
+      "id": "q36",
+      "question": "Summarize ticket T-1037 about paused flows.",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 258,
+          "source": "corpus/tickets/T-1037.md",
+          "score": 1.6250810623168945
+        },
+        {
+          "chunk_id": 259,
+          "source": "corpus/tickets/T-1037.md",
+          "score": -0.34552839398384094
+        },
+        {
+          "chunk_id": 198,
+          "source": "corpus/tickets/T-1017.md",
+          "score": -2.3899741172790527
+        },
+        {
+          "chunk_id": 260,
+          "source": "corpus/tickets/T-1037.md",
+          "score": -2.731109857559204
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -3.8800058364868164
+        },
+        {
+          "chunk_id": 213,
+          "source": "corpus/tickets/T-1022.md",
+          "score": -4.101304531097412
+        },
+        {
+          "chunk_id": 174,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -4.718001365661621
+        },
+        {
+          "chunk_id": 267,
+          "source": "corpus/tickets/T-1040.md",
+          "score": -6.253634929656982
+        }
+      ],
+      "top_score": 1.6250810623168945,
+      "hit": true,
+      "hit_rank": 4,
+      "latency_ms": 2657
+    },
+    {
+      "id": "q37",
+      "question": "Which ticket asked about the Snowflake export running every 5 minutes?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 238,
+          "source": "corpus/tickets/T-1030.md",
+          "score": 4.103544235229492
+        },
+        {
+          "chunk_id": 239,
+          "source": "corpus/tickets/T-1030.md",
+          "score": -0.7175644636154175
+        },
+        {
+          "chunk_id": 237,
+          "source": "corpus/tickets/T-1030.md",
+          "score": -1.9527719020843506
+        },
+        {
+          "chunk_id": 176,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -7.480297565460205
+        },
+        {
+          "chunk_id": 174,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -8.087896347045898
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -9.680893898010254
+        },
+        {
+          "chunk_id": 218,
+          "source": "corpus/tickets/T-1023.md",
+          "score": -9.854484558105469
+        },
+        {
+          "chunk_id": 244,
+          "source": "corpus/tickets/T-1032.md",
+          "score": -10.120316505432129
+        }
+      ],
+      "top_score": 4.103544235229492,
+      "hit": true,
+      "hit_rank": 2,
+      "latency_ms": 1118
+    },
+    {
+      "id": "q38",
+      "question": "My team keeps getting throttled at 300 calls a minute; what plan limit is that?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 224,
+          "source": "corpus/tickets/T-1025.md",
+          "score": 1.6514978408813477
+        },
+        {
+          "chunk_id": 3,
+          "source": "corpus/handbook/api-rate-limits-and-errors.md",
+          "score": -1.8311350345611572
+        },
+        {
+          "chunk_id": 33,
+          "source": "corpus/handbook/plan-limits-reference.md",
+          "score": -3.2206108570098877
+        },
+        {
+          "chunk_id": 223,
+          "source": "corpus/tickets/T-1025.md",
+          "score": -4.195334434509277
+        },
+        {
+          "chunk_id": 176,
+          "source": "corpus/tickets/T-1009.md",
+          "score": -4.975373268127441
+        },
+        {
+          "chunk_id": 222,
+          "source": "corpus/tickets/T-1025.md",
+          "score": -6.56865119934082
+        },
+        {
+          "chunk_id": 205,
+          "source": "corpus/tickets/T-1019.md",
+          "score": -7.96272087097168
+        },
+        {
+          "chunk_id": 267,
+          "source": "corpus/tickets/T-1040.md",
+          "score": -7.97890567779541
+        }
+      ],
+      "top_score": 1.6514978408813477,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 3163
+    },
+    {
+      "id": "q39",
+      "question": "If my card keeps failing, when does Quillbase give up and downgrade me?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 29,
+          "source": "corpus/handbook/invoicing-and-payment-methods.md",
+          "score": 2.2683029174804688
+        },
+        {
+          "chunk_id": 40,
+          "source": "corpus/handbook/refund-policy.md",
+          "score": -4.772177696228027
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": -4.906772613525391
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -4.92921257019043
+        },
+        {
+          "chunk_id": 236,
+          "source": "corpus/tickets/T-1029.md",
+          "score": -5.3350677490234375
+        },
+        {
+          "chunk_id": 67,
+          "source": "corpus/handbook/vulnerability-disclosure.md",
+          "score": -5.411710262298584
+        },
+        {
+          "chunk_id": 260,
+          "source": "corpus/tickets/T-1037.md",
+          "score": -6.051231384277344
+        },
+        {
+          "chunk_id": 166,
+          "source": "corpus/tickets/T-1006.md",
+          "score": -6.440387725830078
+        }
+      ],
+      "top_score": 2.2683029174804688,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2905
+    },
+    {
+      "id": "q40",
+      "question": "Who can I contact to have my personal data erased?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": -8.647878646850586
+        },
+        {
+          "chunk_id": 86,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -10.117485046386719
+        },
+        {
+          "chunk_id": 158,
+          "source": "corpus/tickets/T-1003.md",
+          "score": -11.043973922729492
+        },
+        {
+          "chunk_id": 211,
+          "source": "corpus/tickets/T-1021.md",
+          "score": -11.10714340209961
+        },
+        {
+          "chunk_id": 94,
+          "source": "corpus/oss/commander-options-in-depth.md",
+          "score": -11.122041702270508
+        },
+        {
+          "chunk_id": 210,
+          "source": "corpus/tickets/T-1021.md",
+          "score": -11.181968688964844
+        },
+        {
+          "chunk_id": 49,
+          "source": "corpus/handbook/security-overview.md",
+          "score": -11.319799423217773
+        },
+        {
+          "chunk_id": 256,
+          "source": "corpus/tickets/T-1036.md",
+          "score": -11.32465648651123
+        }
+      ],
+      "top_score": -8.647878646850586,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2526
+    },
+    {
+      "id": "q41",
+      "question": "How long do I have to ask for a refund?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": 3.2910025119781494
+        },
+        {
+          "chunk_id": 40,
+          "source": "corpus/handbook/refund-policy.md",
+          "score": 1.4015240669250488
+        },
+        {
+          "chunk_id": 66,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": -6.66710901260376
+        },
+        {
+          "chunk_id": 203,
+          "source": "corpus/tickets/T-1018.md",
+          "score": -6.741241931915283
+        },
+        {
+          "chunk_id": 221,
+          "source": "corpus/tickets/T-1024.md",
+          "score": -7.168622016906738
+        },
+        {
+          "chunk_id": 44,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -7.229460716247559
+        },
+        {
+          "chunk_id": 72,
+          "source": "corpus/oss/commander-contributing.md",
+          "score": -7.617570877075195
+        },
+        {
+          "chunk_id": 23,
+          "source": "corpus/handbook/expense-policy.md",
+          "score": -8.315238952636719
+        }
+      ],
+      "top_score": 3.2910025119781494,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2425
+    },
+    {
+      "id": "q42",
+      "question": "What is the refund window for annual plans?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": 6.370459079742432
+        },
+        {
+          "chunk_id": 40,
+          "source": "corpus/handbook/refund-policy.md",
+          "score": 4.814602851867676
+        },
+        {
+          "chunk_id": 7,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": -3.94692325592041
+        },
+        {
+          "chunk_id": 29,
+          "source": "corpus/handbook/invoicing-and-payment-methods.md",
+          "score": -4.076091766357422
+        },
+        {
+          "chunk_id": 207,
+          "source": "corpus/tickets/T-1020.md",
+          "score": -7.288538932800293
+        },
+        {
+          "chunk_id": 44,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -8.817441940307617
+        },
+        {
+          "chunk_id": 66,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": -9.108434677124023
+        },
+        {
+          "chunk_id": 240,
+          "source": "corpus/tickets/T-1031.md",
+          "score": -9.112430572509766
+        }
+      ],
+      "top_score": 6.370459079742432,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2403
+    },
+    {
+      "id": "q43",
+      "question": "How quickly are approved refunds paid out?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 40,
+          "source": "corpus/handbook/refund-policy.md",
+          "score": 3.95530104637146
+        },
+        {
+          "chunk_id": 8,
+          "source": "corpus/handbook/billing-faq.md",
+          "score": 1.4561090469360352
+        },
+        {
+          "chunk_id": 66,
+          "source": "corpus/handbook/support-escalation-runbook.md",
+          "score": -1.001760482788086
+        },
+        {
+          "chunk_id": 23,
+          "source": "corpus/handbook/expense-policy.md",
+          "score": -5.245163917541504
+        },
+        {
+          "chunk_id": 221,
+          "source": "corpus/tickets/T-1024.md",
+          "score": -5.829953193664551
+        },
+        {
+          "chunk_id": 173,
+          "source": "corpus/tickets/T-1008.md",
+          "score": -6.177512168884277
+        },
+        {
+          "chunk_id": 44,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -7.2315592765808105
+        },
+        {
+          "chunk_id": 29,
+          "source": "corpus/handbook/invoicing-and-payment-methods.md",
+          "score": -8.525424003601074
+        }
+      ],
+      "top_score": 3.95530104637146,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 2184
+    },
+    {
+      "id": "q44",
+      "question": "How do I change the default version flags in Commander?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 113,
+          "source": "corpus/oss/commander-readme.md",
+          "score": 6.954873561859131
+        },
+        {
+          "chunk_id": 130,
+          "source": "corpus/oss/commander-readme.md",
+          "score": 4.249986171722412
+        },
+        {
+          "chunk_id": 144,
+          "source": "corpus/oss/commander-readme.md",
+          "score": 1.4776160717010498
+        },
+        {
+          "chunk_id": 78,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": 1.192401647567749
+        },
+        {
+          "chunk_id": 87,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": 0.7660446166992188
+        },
+        {
+          "chunk_id": 74,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": 0.5822234153747559
+        },
+        {
+          "chunk_id": 88,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -1.3311071395874023
+        },
+        {
+          "chunk_id": 103,
+          "source": "corpus/oss/commander-readme.md",
+          "score": -1.578122854232788
+        }
+      ],
+      "top_score": 6.954873561859131,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 5127
+    },
+    {
+      "id": "q45",
+      "question": "How often does Commander do major releases?",
+      "answerable": true,
+      "retrieved": [
+        {
+          "chunk_id": 147,
+          "source": "corpus/oss/commander-release-policy.md",
+          "score": 6.31050968170166
+        },
+        {
+          "chunk_id": 146,
+          "source": "corpus/oss/commander-readme.md",
+          "score": 4.303304672241211
+        },
+        {
+          "chunk_id": 35,
+          "source": "corpus/handbook/postmortem-process.md",
+          "score": -4.96403169631958
+        },
+        {
+          "chunk_id": 74,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -5.844865798950195
+        },
+        {
+          "chunk_id": 84,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -7.702098846435547
+        },
+        {
+          "chunk_id": 103,
+          "source": "corpus/oss/commander-readme.md",
+          "score": -8.808475494384766
+        },
+        {
+          "chunk_id": 26,
+          "source": "corpus/handbook/incident-response-policy.md",
+          "score": -8.82693862915039
+        },
+        {
+          "chunk_id": 105,
+          "source": "corpus/oss/commander-readme.md",
+          "score": -8.839897155761719
+        }
+      ],
+      "top_score": 6.31050968170166,
+      "hit": true,
+      "hit_rank": 1,
+      "latency_ms": 5259
+    },
+    {
+      "id": "q46",
+      "question": "What is the price of the Enterprise plan per seat in euros?",
+      "answerable": false,
+      "retrieved": [
+        {
+          "chunk_id": 37,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": 0.9841839671134949
+        },
+        {
+          "chunk_id": 15,
+          "source": "corpus/handbook/competitive-battlecard.md",
+          "score": -0.6333457231521606
+        },
+        {
+          "chunk_id": 242,
+          "source": "corpus/tickets/T-1031.md",
+          "score": -1.959786057472229
+        },
+        {
+          "chunk_id": 45,
+          "source": "corpus/handbook/sales-playbook-qualification.md",
+          "score": -2.4669508934020996
+        },
+        {
+          "chunk_id": 13,
+          "source": "corpus/handbook/competitive-battlecard.md",
+          "score": -4.639167785644531
+        },
+        {
+          "chunk_id": 38,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -7.377892971038818
+        },
+        {
+          "chunk_id": 250,
+          "source": "corpus/tickets/T-1034.md",
+          "score": -8.324014663696289
+        },
+        {
+          "chunk_id": 251,
+          "source": "corpus/tickets/T-1034.md",
+          "score": -8.721981048583984
+        }
+      ],
+      "top_score": 0.9841839671134949,
+      "hit": null,
+      "hit_rank": null,
+      "latency_ms": 2682
+    },
+    {
+      "id": "q47",
+      "question": "Does Quillbase offer a mobile app for iOS widgets?",
+      "answerable": false,
+      "retrieved": [
+        {
+          "chunk_id": 236,
+          "source": "corpus/tickets/T-1029.md",
+          "score": -0.25748369097709656
+        },
+        {
+          "chunk_id": 59,
+          "source": "corpus/handbook/slack-integration.md",
+          "score": -2.0802500247955322
+        },
+        {
+          "chunk_id": 48,
+          "source": "corpus/handbook/salesforce-integration.md",
+          "score": -2.350726366043091
+        },
+        {
+          "chunk_id": 67,
+          "source": "corpus/handbook/vulnerability-disclosure.md",
+          "score": -3.1900217533111572
+        },
+        {
+          "chunk_id": 68,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -3.486240863800049
+        },
+        {
+          "chunk_id": 50,
+          "source": "corpus/handbook/security-overview.md",
+          "score": -4.302573204040527
+        },
+        {
+          "chunk_id": 37,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -4.390048980712891
+        },
+        {
+          "chunk_id": 166,
+          "source": "corpus/tickets/T-1006.md",
+          "score": -4.710013389587402
+        }
+      ],
+      "top_score": -0.25748369097709656,
+      "hit": null,
+      "hit_rank": null,
+      "latency_ms": 2512
+    },
+    {
+      "id": "q48",
+      "question": "Who is the CEO of Quillbase?",
+      "answerable": false,
+      "retrieved": [
+        {
+          "chunk_id": 37,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -0.8698800802230835
+        },
+        {
+          "chunk_id": 41,
+          "source": "corpus/handbook/remote-work-policy.md",
+          "score": -2.036923408508301
+        },
+        {
+          "chunk_id": 68,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -2.039374589920044
+        },
+        {
+          "chunk_id": 236,
+          "source": "corpus/tickets/T-1029.md",
+          "score": -2.2396817207336426
+        },
+        {
+          "chunk_id": 5,
+          "source": "corpus/handbook/benefits-and-stipends.md",
+          "score": -2.2569565773010254
+        },
+        {
+          "chunk_id": 50,
+          "source": "corpus/handbook/security-overview.md",
+          "score": -2.3436102867126465
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": -2.645049571990967
+        },
+        {
+          "chunk_id": 62,
+          "source": "corpus/handbook/sso-and-scim-setup.md",
+          "score": -2.7423415184020996
+        }
+      ],
+      "top_score": -0.8698800802230835,
+      "hit": null,
+      "hit_rank": null,
+      "latency_ms": 2323
+    },
+    {
+      "id": "q49",
+      "question": "What is the company's policy on parental leave for contractors?",
+      "answerable": false,
+      "retrieved": [
+        {
+          "chunk_id": 39,
+          "source": "corpus/handbook/pto-and-holidays.md",
+          "score": -4.473872184753418
+        },
+        {
+          "chunk_id": 41,
+          "source": "corpus/handbook/remote-work-policy.md",
+          "score": -8.692763328552246
+        },
+        {
+          "chunk_id": 24,
+          "source": "corpus/handbook/incident-response-policy.md",
+          "score": -9.100541114807129
+        },
+        {
+          "chunk_id": 44,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -10.289079666137695
+        },
+        {
+          "chunk_id": 47,
+          "source": "corpus/handbook/sales-playbook-qualification.md",
+          "score": -10.646871566772461
+        },
+        {
+          "chunk_id": 255,
+          "source": "corpus/tickets/T-1036.md",
+          "score": -10.709051132202148
+        },
+        {
+          "chunk_id": 186,
+          "source": "corpus/tickets/T-1013.md",
+          "score": -10.791035652160645
+        },
+        {
+          "chunk_id": 19,
+          "source": "corpus/handbook/employee-onboarding.md",
+          "score": -10.959510803222656
+        }
+      ],
+      "top_score": -4.473872184753418,
+      "hit": null,
+      "hit_rank": null,
+      "latency_ms": 2557
+    },
+    {
+      "id": "q50",
+      "question": "What is the maximum number of Zapier zaps that can be connected?",
+      "answerable": false,
+      "retrieved": [
+        {
+          "chunk_id": 205,
+          "source": "corpus/tickets/T-1019.md",
+          "score": -8.014139175415039
+        },
+        {
+          "chunk_id": 48,
+          "source": "corpus/handbook/salesforce-integration.md",
+          "score": -10.491241455078125
+        },
+        {
+          "chunk_id": 70,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -10.985301971435547
+        },
+        {
+          "chunk_id": 33,
+          "source": "corpus/handbook/plan-limits-reference.md",
+          "score": -10.992927551269531
+        },
+        {
+          "chunk_id": 206,
+          "source": "corpus/tickets/T-1019.md",
+          "score": -11.024335861206055
+        },
+        {
+          "chunk_id": 224,
+          "source": "corpus/tickets/T-1025.md",
+          "score": -11.080343246459961
+        },
+        {
+          "chunk_id": 1,
+          "source": "corpus/handbook/api-getting-started.md",
+          "score": -11.17125415802002
+        },
+        {
+          "chunk_id": 28,
+          "source": "corpus/handbook/integrations-overview.md",
+          "score": -11.229032516479492
+        }
+      ],
+      "top_score": -8.014139175415039,
+      "hit": null,
+      "hit_rank": null,
+      "latency_ms": 4743
+    },
+    {
+      "id": "q51",
+      "question": "How do I configure Quillbase to run on-premises?",
+      "answerable": false,
+      "retrieved": [
+        {
+          "chunk_id": 59,
+          "source": "corpus/handbook/slack-integration.md",
+          "score": 1.5444773435592651
+        },
+        {
+          "chunk_id": 30,
+          "source": "corpus/handbook/legacy-onboarding-checklist-2024.md",
+          "score": -0.24679851531982422
+        },
+        {
+          "chunk_id": 18,
+          "source": "corpus/handbook/data-residency-and-retention.md",
+          "score": -1.5235984325408936
+        },
+        {
+          "chunk_id": 48,
+          "source": "corpus/handbook/salesforce-integration.md",
+          "score": -2.197941541671753
+        },
+        {
+          "chunk_id": 37,
+          "source": "corpus/handbook/pricing-and-plans.md",
+          "score": -2.367013454437256
+        },
+        {
+          "chunk_id": 62,
+          "source": "corpus/handbook/sso-and-scim-setup.md",
+          "score": -4.020305156707764
+        },
+        {
+          "chunk_id": 69,
+          "source": "corpus/handbook/webhooks-guide.md",
+          "score": -4.311858654022217
+        },
+        {
+          "chunk_id": 41,
+          "source": "corpus/handbook/remote-work-policy.md",
+          "score": -4.958669185638428
+        }
+      ],
+      "top_score": 1.5444773435592651,
+      "hit": null,
+      "hit_rank": null,
+      "latency_ms": 2541
+    },
+    {
+      "id": "q52",
+      "question": "What were the Q3 2026 revenue figures?",
+      "answerable": false,
+      "retrieved": [
+        {
+          "chunk_id": 225,
+          "source": "corpus/tickets/T-1026.md",
+          "score": -8.75735855102539
+        },
+        {
+          "chunk_id": 23,
+          "source": "corpus/handbook/expense-policy.md",
+          "score": -8.876432418823242
+        },
+        {
+          "chunk_id": 255,
+          "source": "corpus/tickets/T-1036.md",
+          "score": -9.097160339355469
+        },
+        {
+          "chunk_id": 186,
+          "source": "corpus/tickets/T-1013.md",
+          "score": -9.144017219543457
+        },
+        {
+          "chunk_id": 42,
+          "source": "corpus/handbook/sales-discounting-and-quotes.md",
+          "score": -9.651098251342773
+        },
+        {
+          "chunk_id": 222,
+          "source": "corpus/tickets/T-1025.md",
+          "score": -9.66972827911377
+        },
+        {
+          "chunk_id": 189,
+          "source": "corpus/tickets/T-1014.md",
+          "score": -9.903514862060547
+        },
+        {
+          "chunk_id": 207,
+          "source": "corpus/tickets/T-1020.md",
+          "score": -10.04708480834961
+        }
+      ],
+      "top_score": -8.75735855102539,
+      "hit": null,
+      "hit_rank": null,
+      "latency_ms": 1963
+    },
+    {
+      "id": "q53",
+      "question": "Which Commander version added support for async hooks in Deno?",
+      "answerable": false,
+      "retrieved": [
+        {
+          "chunk_id": 146,
+          "source": "corpus/oss/commander-readme.md",
+          "score": -2.6941587924957275
+        },
+        {
+          "chunk_id": 85,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -4.595574378967285
+        },
+        {
+          "chunk_id": 87,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -5.3275651931762695
+        },
+        {
+          "chunk_id": 122,
+          "source": "corpus/oss/commander-readme.md",
+          "score": -5.706308364868164
+        },
+        {
+          "chunk_id": 89,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -6.683269500732422
+        },
+        {
+          "chunk_id": 103,
+          "source": "corpus/oss/commander-readme.md",
+          "score": -7.796219348907471
+        },
+        {
+          "chunk_id": 74,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -7.84908390045166
+        },
+        {
+          "chunk_id": 78,
+          "source": "corpus/oss/commander-deprecated.md",
+          "score": -8.100311279296875
+        }
+      ],
+      "top_score": -2.6941587924957275,
+      "hit": null,
+      "hit_rank": null,
+      "latency_ms": 5247
+    }
+  ]
+}
