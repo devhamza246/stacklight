@@ -8,6 +8,8 @@ and shows the closest sources instead of guessing. A Curator agent audits the kn
 pages and proposes exact fixes; a Drafter writes support and sales replies. Nothing is sent and nothing in the knowledge
 base changes without a recorded human approval.
 
+**Live demo: [stacklight.hamzacodes.dev](https://stacklight.hamzacodes.dev)** (no login; click **How it works** for a 30-second tour). It runs on a made-up company's docs, "sending" is simulated, the sample knowledge base resets every 6 hours, and a daily spend cap pauses it if it is overused.
+
 ![Cited answer with the source drawer open](docs/ui/screens/desktop-light-answer-drawer.png)
 
 *A verified, cited answer; the citation opens the exact passage it came from. Screenshots in this README come from the
