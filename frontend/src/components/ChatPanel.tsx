@@ -33,6 +33,7 @@ interface Props {
   onAudit: () => void;
   onRetry: () => void;
   onRephrase: () => void;
+  onTour: (e: { currentTarget: HTMLElement }) => void;
   onViewTrace: () => void;
   onViewQueue: () => void;
   openChunkId: number | null;
@@ -80,6 +81,7 @@ export function ChatPanel(p: Props) {
               <p className="eyebrow">AI team that answers from your docs, and keeps them current.</p>
               <h1>Ask anything the docs can answer.</h1>
               <p>Every answer cites its sources. If the docs don’t say, Stacklight tells you instead of guessing.</p>
+              <p className="intro-tour">New here? <button type="button" className="link-btn" onClick={p.onTour}>Take the 30-second tour</button> or just try a sample question below.</p>
             </div>
             {composerEl(true)}
             <SuggestionChips onPick={p.onPick} onAudit={p.onAudit} disabled={p.composerDisabled || running} />

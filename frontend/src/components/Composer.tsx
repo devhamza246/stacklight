@@ -43,10 +43,10 @@ export function Composer({
   };
 
   return (
-    <form className="composer" onSubmit={(e) => { e.preventDefault(); if (canSend) onSubmit(); }}>
+    <form className="composer" data-tour="composer" onSubmit={(e) => { e.preventDefault(); if (canSend) onSubmit(); }}>
       <div className={`composer-box${disabled ? " disabled-box" : ""}`}>
         <div className="composer-modes">
-          <div role="group" aria-label="Mode" className="seg">
+          <div role="group" aria-label="Mode" className="seg" data-tour="modes">
             <button type="button" aria-pressed={!draft} aria-label="Ask mode" onClick={() => onModeChange("ask")}>Ask</button>
             <button type="button" aria-pressed={draft} aria-label="Draft reply mode" onClick={() => onModeChange("draft")}>Draft reply</button>
           </div>
@@ -99,7 +99,7 @@ export const SUGGESTIONS = [
 
 export function SuggestionChips({ onPick, onAudit, disabled }: { onPick: (q: string) => void; onAudit: () => void; disabled?: boolean }) {
   return (
-    <div className="chips" role="group" aria-label="Suggested questions">
+    <div className="chips" data-tour="chips" role="group" aria-label="Suggested questions">
       {SUGGESTIONS.map((q) => (
         <button key={q} className="chip" type="button" disabled={disabled} onClick={() => onPick(q)}>{q}</button>
       ))}
